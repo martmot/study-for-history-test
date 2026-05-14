@@ -3,1298 +3,1191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Civil Rights & Equality — Study Guide</title>
+<title>Civil Rights & Social Movements — Study Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1208;
-    --paper: #f5f0e8;
-    --cream: #ede6d6;
-    --rust: #b5441c;
-    --rust-light: #e8c4b4;
-    --rust-dark: #7a2e10;
-    --gold: #c8900a;
-    --gold-light: #f5e0a0;
-    --teal: #1a6b5a;
-    --teal-light: #b8ddd6;
-    --slate: #2e3a4a;
-    --slate-light: #c8d4e0;
-    --muted: #6b5f52;
-    --border: rgba(26,18,8,0.15);
+    --bg: #0e0e10;
+    --bg2: #16161a;
+    --bg3: #1e1e24;
+    --card: #1a1a20;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.15);
+    --text: #f0ede8;
+    --muted: #9a9590;
+    --accent1: #e8b86d; /* gold */
+    --accent2: #7eb8c9; /* steel blue */
+    --accent3: #c47e7e; /* muted red */
+    --accent4: #7ec97e; /* muted green */
+    --accent5: #a07ec9; /* muted purple */
+    --radius: 10px;
+    --radius-lg: 16px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
+    background: var(--bg);
+    color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
     min-height: 100vh;
   }
-
-  /* ── HERO ── */
+  /* HEADER */
   .hero {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 4rem 2rem 3rem;
+    background: linear-gradient(135deg, #0e0e10 0%, #1a1022 50%, #0e1218 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
     position: relative;
     overflow: hidden;
   }
   .hero::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 80px,
-      rgba(255,255,255,0.03) 80px,
-      rgba(255,255,255,0.03) 81px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 80px,
-      rgba(255,255,255,0.03) 80px,
-      rgba(255,255,255,0.03) 81px
-    );
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(232,184,109,0.03) 60px, rgba(232,184,109,0.03) 61px);
+    pointer-events: none;
   }
-  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
-  .hero-tag {
+  .hero-eyebrow {
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--accent1);
     margin-bottom: 1rem;
+    font-weight: 500;
   }
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 1rem;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
   }
-  .hero h1 span { color: var(--rust); font-style: italic; }
+  .hero h1 span { color: var(--accent1); }
   .hero-sub {
-    font-size: 1rem;
-    color: rgba(245,240,232,0.65);
-    max-width: 540px;
-    line-height: 1.7;
-    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
   }
-  .hero-chips { display: flex; gap: 8px; flex-wrap: wrap; }
-  .chip {
-    font-size: 12px;
-    font-weight: 500;
-    padding: 5px 14px;
-    border-radius: 99px;
-    border: 1px solid rgba(245,240,232,0.2);
-    color: rgba(245,240,232,0.7);
-  }
-
-  /* ── NAV ── */
-  .nav {
-    background: var(--cream);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-inner {
-    max-width: 900px;
-    margin: 0 auto;
+  /* NAV */
+  .nav-tabs {
     display: flex;
     gap: 0;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
     overflow-x: auto;
     scrollbar-width: none;
   }
-  .nav-inner::-webkit-scrollbar { display: none; }
-  .nav-btn {
-    padding: 14px 20px;
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 1rem 1.5rem;
     font-size: 13px;
     font-weight: 500;
-    color: var(--muted);
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
     cursor: pointer;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
     white-space: nowrap;
     transition: all 0.2s;
+    background: none;
+    border-left: none; border-right: none; border-top: none;
     font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.3px;
   }
-  .nav-btn:hover { color: var(--ink); }
-  .nav-btn.active {
-    color: var(--rust);
-    border-bottom-color: var(--rust);
-    font-weight: 600;
-  }
-
-  /* ── MAIN LAYOUT ── */
-  .main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-  .section { display: none; animation: fadeIn 0.3s ease; }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--accent1); border-bottom-color: var(--accent1); }
+  /* SECTIONS */
+  .section { display: none; padding: 2rem; max-width: 900px; margin: 0 auto; }
   .section.active { display: block; }
-
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-  .section-head { margin-bottom: 2.5rem; }
-  .section-head h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-  .section-head p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-
-  /* ── CONCEPT MAP ── */
-  .concept-block {
-    background: white;
+  /* CONCEPT MAP */
+  .concept-card {
+    background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: var(--radius-lg);
     margin-bottom: 1.25rem;
-    border-left: 4px solid var(--rust);
-    transition: box-shadow 0.2s;
+    overflow: hidden;
+    transition: border-color 0.2s;
   }
-  .concept-block:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-  .concept-block.teal { border-left-color: var(--teal); }
-  .concept-block.gold { border-left-color: var(--gold); }
-  .concept-block.slate { border-left-color: var(--slate); }
-
-  .cb-head {
+  .concept-card:hover { border-color: var(--border2); }
+  .concept-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
   }
-  .cb-tag {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 99px;
-    background: var(--rust-light);
-    color: var(--rust-dark);
+  .concept-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+    flex-shrink: 0;
   }
-  .cb-tag.teal { background: var(--teal-light); color: var(--teal); }
-  .cb-tag.gold { background: var(--gold-light); color: #7a5500; }
-  .cb-tag.slate { background: var(--slate-light); color: var(--slate); }
-
-  .cb-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--ink);
+  .concept-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .concept-toggle { color: var(--muted); font-size: 18px; transition: transform 0.3s; }
+  .concept-card.open .concept-toggle { transform: rotate(180deg); }
+  .concept-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
   }
-
-  .flow {
+  .concept-card.open .concept-body { display: block; }
+  .flow-row {
     display: grid;
-    grid-template-columns: 1fr 28px 1fr 28px 1fr;
-    gap: 8px;
-    align-items: start;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 1rem 0;
   }
-  .flow-box { background: var(--cream); border-radius: 8px; padding: 10px 12px; }
-  .flow-label {
+  .flow-box {
+    background: var(--bg3);
+    border-radius: var(--radius);
+    padding: 0.875rem 1rem;
+    font-size: 13px;
+  }
+  .flow-box .label {
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 5px;
-  }
-  .flow-text { font-size: 13px; color: var(--ink); line-height: 1.55; }
-  .flow-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--muted);
-    padding-top: 22px;
-  }
-  @media (max-width: 640px) {
-    .flow { grid-template-columns: 1fr; }
-    .flow-arrow { display: none; }
-  }
-
-  /* ── INFERENCES ── */
-  .inf-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .inf-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-  .inf-card::before {
-    content: attr(data-num);
-    position: absolute;
-    right: 1.5rem;
-    top: 1rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 900;
-    color: var(--cream);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .inf-num-tag {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 8px;
-  }
-  .inf-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 10px;
-    max-width: 80%;
-  }
-  .inf-body { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 85%; }
-
-  /* ── FLASHCARDS ── */
-  .fc-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-  }
-  .fc-counter {
-    font-size: 13px;
-    color: var(--muted);
-    flex: 1;
-  }
-  .btn {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    margin-bottom: 0.4rem;
     font-weight: 600;
-    padding: 8px 18px;
-    border-radius: 8px;
-    border: 1.5px solid var(--border);
-    background: white;
-    color: var(--ink);
-    cursor: pointer;
-    transition: all 0.15s;
   }
-  .btn:hover { background: var(--cream); border-color: var(--ink); }
-  .btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-  .btn.primary:hover { background: var(--rust-dark); border-color: var(--rust-dark); }
-  .btn.rust { background: var(--rust); color: white; border-color: var(--rust); }
-  .btn.rust:hover { background: var(--rust-dark); }
-
-  .fc-scene {
-    perspective: 1000px;
-    width: 100%;
-    height: 280px;
+  .flow-arrow { color: var(--muted); font-size: 20px; }
+  .detail-text { font-size: 14px; color: var(--muted); line-height: 1.7; margin-top: 0.75rem; }
+  .key-term { color: var(--accent1); font-weight: 500; }
+  /* INFERENCES */
+  .inference-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent1);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .inference-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 0.5rem; }
+  .inference-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .inference-card .insight-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: rgba(232,184,109,0.12);
+    color: var(--accent1);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  /* PRACTICE TEST */
+  .question-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
     margin-bottom: 1.5rem;
-    cursor: pointer;
-  }
-  .fc-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
-  }
-  .fc-inner.flipped { transform: rotateY(180deg); }
-  .fc-face {
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-  }
-  .fc-front {
-    background: var(--ink);
-    color: var(--paper);
-  }
-  .fc-back {
-    background: var(--teal);
-    color: white;
-    transform: rotateY(180deg);
-  }
-  .fc-hint {
-    position: absolute;
-    bottom: 14px;
-    right: 18px;
-    font-size: 11px;
-    opacity: 0.5;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-  }
-  .fc-category {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    opacity: 0.55;
-    margin-bottom: 12px;
-  }
-  .fc-question {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.35;
-  }
-  .fc-answer {
-    font-size: 14px;
-    line-height: 1.7;
-    opacity: 0.92;
-  }
-  .fc-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-  }
-  .fc-progress {
-    display: flex;
-    gap: 4px;
-    justify-content: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
-  .fc-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 99px;
-    background: var(--border);
-    transition: all 0.2s;
-  }
-  .fc-dot.seen { background: var(--teal); }
-  .fc-dot.current { background: var(--rust); width: 18px; }
-
-  /* ── PRACTICE EXAM ── */
-  .quiz-status {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 2rem;
-  }
-  .quiz-score {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--rust);
-    min-width: 60px;
-  }
-  .quiz-score-label { font-size: 12px; color: var(--muted); }
-  .quiz-bar-wrap { flex: 1; }
-  .quiz-bar {
-    background: var(--cream);
-    border-radius: 99px;
-    height: 8px;
     overflow: hidden;
   }
-  .quiz-bar-fill {
-    background: var(--teal);
-    border-radius: 99px;
-    height: 100%;
-    width: 0%;
-    transition: width 0.4s ease;
+  .question-header {
+    padding: 1.25rem 1.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
   }
-  .quiz-bar-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
-
-  .q-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-  }
-  .q-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .q-n {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--muted);
+  .q-num {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent2);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
   }
   .q-type-badge {
+    display: inline-block;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 2px 9px;
-    border-radius: 99px;
-  }
-  .badge-mc { background: var(--slate-light); color: var(--slate); }
-  .badge-sa { background: var(--gold-light); color: #7a5500; }
-  .badge-topic { background: var(--cream); color: var(--muted); font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 99px; }
-
-  .q-text {
-    font-size: 15px;
+    padding: 2px 8px;
+    border-radius: 20px;
     font-weight: 600;
-    color: var(--ink);
-    line-height: 1.6;
-    margin-bottom: 14px;
+    margin-left: 0.5rem;
+    letter-spacing: 0.3px;
   }
-  .q-opts { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-  .q-opt {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1.5px solid var(--border);
-    font-size: 13.5px;
-    color: var(--ink);
-    cursor: pointer;
-    transition: all 0.15s;
-    background: white;
-  }
-  .q-opt:hover:not(.locked) { background: var(--cream); border-color: var(--ink); }
-  .q-opt.correct { background: #e6f5ec; border-color: #2a8a50; color: #1a5c35; }
-  .q-opt.wrong { background: #faeaea; border-color: #b03030; color: #7a1a1a; }
-  .q-opt.locked { cursor: default; }
-
-  .sa-area {
-    width: 100%;
-    min-height: 80px;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13.5px;
-    color: var(--ink);
-    background: var(--cream);
-    resize: vertical;
-    margin-bottom: 10px;
-  }
-
-  .reveal-btn {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .reveal-btn:hover { background: var(--cream); color: var(--ink); }
-
-  .answer-reveal {
-    display: none;
-    margin-top: 12px;
-    background: var(--cream);
-    border-radius: 8px;
-    padding: 12px 14px;
-  }
-  .answer-reveal.open { display: block; animation: fadeIn 0.25s ease; }
-  .ar-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 5px;
-  }
-  .ar-correct {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--teal);
-    margin-bottom: 6px;
-  }
-  .ar-text { font-size: 13px; color: var(--muted); line-height: 1.65; }
-
-  /* ── ANNEX ── */
-  .hiyield-list { counter-reset: hi; }
-  .hi-item {
+  .badge-mc { background: rgba(126,184,201,0.12); color: var(--accent2); }
+  .badge-sa { background: rgba(126,201,126,0.12); color: var(--accent4); }
+  .question-text { font-size: 15px; font-weight: 500; line-height: 1.6; }
+  .options-list { list-style: none; padding: 1rem 1.5rem; }
+  .option-item {
     display: flex;
-    gap: 16px;
-    padding: 1rem 1.25rem;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: box-shadow 0.2s;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
   }
-  .hi-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-  .hi-rank {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--rust-light);
-    min-width: 36px;
-    line-height: 1;
-  }
-  .hi-content { flex: 1; }
-  .hi-main { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.5; }
-  .hi-detail { font-size: 13px; color: var(--muted); line-height: 1.55; }
-
-  .trap-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--gold);
-    border-radius: 0 10px 10px 0;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 10px;
-    transition: box-shadow 0.2s;
-  }
-  .trap-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-  .trap-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .trap-q { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.5; }
-  .trap-exp { font-size: 13px; color: var(--muted); line-height: 1.65; }
-
-  .subsection-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 2.5rem 0 1.25rem;
-    padding-bottom: 8px;
-    border-bottom: 1.5px solid var(--border);
-  }
-
-  /* ── TIMELINE ── */
-  .timeline { position: relative; padding-left: 28px; }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 8px;
-    bottom: 8px;
-    width: 2px;
-    background: var(--border);
-  }
-  .tl-item {
-    position: relative;
-    margin-bottom: 1.5rem;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-  }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    left: -25px;
-    top: 16px;
-    width: 12px;
-    height: 12px;
+  .option-item:hover { background: var(--bg3); border-color: var(--border); }
+  .option-item.selected { background: rgba(126,184,201,0.1); border-color: var(--accent2); }
+  .option-item.correct { background: rgba(126,201,126,0.12); border-color: var(--accent4); }
+  .option-item.incorrect { background: rgba(196,126,126,0.12); border-color: var(--accent3); }
+  .opt-letter {
+    width: 24px; height: 24px;
     border-radius: 50%;
-    background: var(--rust);
-    border: 2px solid var(--paper);
-    box-shadow: 0 0 0 2px var(--rust);
+    border: 1px solid var(--border2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600;
+    flex-shrink: 0;
+    transition: all 0.2s;
   }
-  .tl-year { font-size: 11px; font-weight: 700; color: var(--rust); letter-spacing: 0.1em; margin-bottom: 4px; }
-  .tl-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-  .tl-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-  /* scrollbar */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--cream); }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .option-item.correct .opt-letter { background: var(--accent4); border-color: var(--accent4); color: #0e1e0e; }
+  .option-item.incorrect .opt-letter { background: var(--accent3); border-color: var(--accent3); color: #1e0e0e; }
+  .reveal-btn {
+    margin: 0 1.5rem 1.25rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .reveal-btn:hover { background: rgba(232,184,109,0.1); border-color: var(--accent1); color: var(--accent1); }
+  .explanation-box {
+    margin: 0 1.5rem 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg3);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--accent1);
+    font-size: 13.5px;
+    line-height: 1.7;
+    display: none;
+  }
+  .explanation-box.visible { display: block; }
+  .explanation-box .correct-label { color: var(--accent4); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+  .sa-textarea {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 0.875rem 1rem;
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+  }
+  .sa-textarea:focus { outline: none; border-color: var(--accent1); }
+  .sa-area { padding: 0.5rem 1.5rem 1.25rem; }
+  /* SCORE */
+  .score-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .score-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--accent1); }
+  .score-label { color: var(--muted); font-size: 13px; }
+  .progress-track { flex: 1; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent1); border-radius: 3px; transition: width 0.5s ease; }
+  /* MEMORY section */
+  .mem-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .mem-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent1);
+    opacity: 0.4;
+    margin-bottom: 0.25rem;
+  }
+  .mem-title { font-weight: 600; font-size: 15px; margin-bottom: 0.5rem; }
+  .mem-body { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  /* TRAPS */
+  .trap-card {
+    background: rgba(196,126,126,0.06);
+    border: 1px solid rgba(196,126,126,0.25);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .trap-card .trap-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent3);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .trap-card h3 { font-size: 14.5px; font-weight: 600; margin-bottom: 0.5rem; }
+  .trap-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+  .trap-card .correction { color: var(--accent4); font-style: italic; margin-top: 0.5rem; font-size: 13px; }
+  /* section headers */
+  .sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .sec-sub { color: var(--muted); font-size: 14px; margin-bottom: 2rem; }
+  .submit-all-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent1);
+    color: #1a1000;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 1rem;
+    transition: opacity 0.2s;
+  }
+  .submit-all-btn:hover { opacity: 0.9; }
+  /* timeline */
+  .timeline { position: relative; padding-left: 2rem; margin: 1.5rem 0; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 1px; background: var(--border2); }
+  .tl-item { position: relative; margin-bottom: 1.25rem; }
+  .tl-dot { position: absolute; left: -1.875rem; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent1); flex-shrink: 0; }
+  .tl-year { font-size: 11px; font-weight: 600; color: var(--accent1); margin-bottom: 0.2rem; }
+  .tl-text { font-size: 13.5px; line-height: 1.6; }
+  .tl-text b { color: var(--text); }
+  .tl-text span { color: var(--muted); }
+  @media (max-width: 600px) {
+    .flow-row { grid-template-columns: 1fr; }
+    .flow-arrow { text-align: center; transform: rotate(90deg); }
+    .score-bar { flex-direction: column; gap: 1rem; }
+  }
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">AP / Honors History — Study Guide</div>
-    <h1>Civil Rights &<br><span>Equality in America</span></h1>
-    <p class="hero-sub">Chapters 27 · 29 · 31 · 33 — From Truman's desegregation order to the movements of the 1960s–80s. Full concept maps, deep analysis, flashcards, practice exam & strategic notes.</p>
-    <div class="hero-chips">
-      <div class="chip">Concept Map</div>
-      <div class="chip">7 Hidden Connections</div>
-      <div class="chip">20 Flashcards</div>
-      <div class="chip">20-Question Exam</div>
-      <div class="chip">Watch Out Annex</div>
-      <div class="chip">Key Timeline</div>
-    </div>
-  </div>
+  <div class="hero-eyebrow">American History · Unit Study Guide</div>
+  <h1>Civil Rights &<br><span>Social Movements</span></h1>
+  <p class="hero-sub">A comprehensive, high-depth guide covering the Civil Rights Movement, Black Power, Women's Liberation, and more — built for exam mastery.</p>
 </div>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <button class="nav-btn active" onclick="show('concepts',this)">① Concept Map</button>
-    <button class="nav-btn" onclick="show('analysis',this)">② Deep Analysis</button>
-    <button class="nav-btn" onclick="show('flashcards',this)">③ Flashcards</button>
-    <button class="nav-btn" onclick="show('exam',this)">④ Practice Exam</button>
-    <button class="nav-btn" onclick="show('annex',this)">⑤ Watch Out</button>
-    <button class="nav-btn" onclick="show('timeline',this)">⑥ Timeline</button>
-  </div>
+<nav class="nav-tabs" role="tablist">
+  <button class="nav-tab active" onclick="switchTab('concept-map', this)" role="tab">① Concept Map</button>
+  <button class="nav-tab" onclick="switchTab('inferences', this)" role="tab">② Deep Analysis</button>
+  <button class="nav-tab" onclick="switchTab('practice', this)" role="tab">③ Practice Exam</button>
+  <button class="nav-tab" onclick="switchTab('memory', this)" role="tab">④ High-Yield & Traps</button>
 </nav>
 
-<main class="main">
+<!-- ═══════════════════════════════════════════════ SECTION 1 ═══ -->
+<section id="concept-map" class="section active">
+  <h2 class="sec-title">Core Concept Map</h2>
+  <p class="sec-sub">Click each concept to expand the Cause → Mechanism → Effect chain. Understand connections, not just facts.</p>
 
-  <!-- ══════════════════════════════
-       SECTION 1: CONCEPT MAP
-  ══════════════════════════════ -->
-  <section id="concepts" class="section active">
-    <div class="section-head">
-      <h2>Core Concept Map</h2>
-      <p>Every major topic shown as <strong>Cause → Mechanism → Effect</strong>. Understanding the chain of causation is more valuable than memorizing isolated facts.</p>
+  <!-- CONCEPT 1 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(232,184,109,0.15);color:var(--accent1);">01</div>
+      <div class="concept-title">Plessy v. Ferguson → Jim Crow → Civil Rights Crisis</div>
+      <div class="concept-toggle">▾</div>
     </div>
-
-    <div class="concept-block">
-      <div class="cb-head"><span class="cb-tag">Ch. 27</span><span class="cb-title">Truman's Civil Rights Actions (1948)</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Rising Black political power in northern cities + Cold War need to appear democratic to non-white nations globally</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">Truman desegregates military (Exec. Order 9981); proposes anti-lynching law, poll tax repeal, end to employment discrimination</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Dixiecrats bolt party; Strom Thurmond runs as States' Rights candidate; seeds planted for full civil rights confrontation</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block slate">
-      <div class="cb-head"><span class="cb-tag slate">Ch. 27</span><span class="cb-title">Eisenhower's "Middle of the Road" Approach</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Eisenhower wanted to keep both moderate liberals and conservative Southern Democrats within his coalition</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">Avoided strong civil rights legislation; sent troops to Little Rock (1957) to enforce federal law — not out of conviction but to preserve federal authority</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">His reluctance emboldened Southern resistance; structural forces (federal supremacy, Cold War) produced civil rights outcomes without a committed president</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block teal">
-      <div class="cb-head"><span class="cb-tag teal">Ch. 29</span><span class="cb-title">Brown v. Board of Education (1954)</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">NAACP legal strategy (Thurgood Marshall) dismantling the "separate but equal" doctrine established by Plessy v. Ferguson (1896)</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">Supreme Court unanimously rules school segregation unconstitutional; removes legal justification for Jim Crow laws broadly</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Massive resistance in South (esp. Arkansas); deep political polarization; catalyst for dismantling further Jim Crow laws nationwide</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block">
-      <div class="cb-head"><span class="cb-tag">Ch. 29</span><span class="cb-title">MLK, SCLC & Nonviolent Civil Disobedience</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Gandhi's nonviolence model + Christian ethics ("love thy neighbor") + de jure segregation in the South demanding organized resistance</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">SCLC organizes boycotts, sit-ins, freedom rides, marches; March on Washington (1963) demands federal legislation before 250,000 people</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Civil Rights Act (1964) outlaws public discrimination; Voting Rights Act (1965) bans literacy tests and mandates federal election oversight</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block gold">
-      <div class="cb-head"><span class="cb-tag gold">Ch. 29</span><span class="cb-title">De Jure vs. De Facto Segregation & Urban Crisis</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Civil Rights Act (1964) & Voting Rights Act (1965) attacked legal discrimination but left redlining, unemployment, and housing inequality untouched in Northern cities</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">Northern Black communities faced de facto segregation — structural economic discrimination invisible to new laws; frustration boiled over</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Race riots mid-1960s (Detroit, Newark, Watts); rise of Malcolm X, Black Power, Black Panthers demanding economic justice not just legal equality</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block teal">
-      <div class="cb-head"><span class="cb-tag teal">Ch. 31</span><span class="cb-title">Latino & Farm Worker Movement (UFW)</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Exploitation of Latino agricultural laborers; denial of basic labor protections; lack of political voice or land rights</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">César Chávez leads UFW using nonviolent strikes, grape boycotts, fasting; La Raza Unida drives voter registration; Chicano Movement promotes cultural pride</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Improved wages and working conditions; growing Latino political representation; lasting cultural pride movement across Southwest</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block slate">
-      <div class="cb-head"><span class="cb-tag slate">Ch. 31</span><span class="cb-title">Native Americans & AIM</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Forced assimilation policies, broken treaties, poverty on reservations, destruction of tribal culture across decades</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">American Indian Movement (AIM) uses urban aid programs, dramatic protests (Wounded Knee 1973), legal challenges to assert treaty rights and sovereignty</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Advancements in Native sovereignty, treaty rights recognition, and cultural revitalization; Indian Self-Determination Act (1975)</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block">
-      <div class="cb-head"><span class="cb-tag">Ch. 31</span><span class="cb-title">Women's Movement, NOW & the ERA</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Betty Friedan's "The Feminine Mystique" (1963) names widespread dissatisfaction of women confined to domestic roles; activists sidelined in male-dominated civil rights groups</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">NOW founded (1966); ERA passes Congress (1972); Title IX (1972) bans gender discrimination in education; equal pay legislation advances</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">ERA fails ratification due to Phyllis Schlafly's conservative backlash; debate fuels rise of the New Right; women gain legal gains but ERA itself dies</div></div>
-      </div>
-    </div>
-
-    <div class="concept-block gold">
-      <div class="cb-head"><span class="cb-tag gold">Ch. 33</span><span class="cb-title">Affirmative Action</span></div>
-      <div class="flow">
-        <div class="flow-box"><div class="flow-label">Cause</div><div class="flow-text">Legal equality achieved but economic inequality persisted; JFK Executive Order 10925 (1961) introduced proactive equal opportunity requirements</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Mechanism</div><div class="flow-text">Federal contractors required to actively recruit minorities and women; universities adopt affirmative admissions policies to diversify campuses</div></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><div class="flow-label">Effect</div><div class="flow-text">Political controversy and legal challenges; some gains in representation; persistent debate over whether it addresses root inequality or creates new unfairness</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       SECTION 2: DEEP ANALYSIS
-  ══════════════════════════════ -->
-  <section id="analysis" class="section">
-    <div class="section-head">
-      <h2>Deep Analysis</h2>
-      <p>7 "hidden" connections that won't appear directly in your notes but are very likely to appear on high-level exams. These are the insights that separate a B from an A.</p>
-    </div>
-
-    <div class="inf-card" data-num="01">
-      <div class="inf-num-tag">Inference 01</div>
-      <div class="inf-title">The Cold War was a hidden engine of civil rights progress</div>
-      <div class="inf-body">The U.S. competed globally against the Soviet Union for the loyalty of newly independent, often non-white nations in Africa and Asia. Segregated schools and lynchings were propaganda weapons the USSR deployed against America. This gave Truman and Eisenhower strategic geopolitical reasons — beyond moral conviction — to act on civil rights. When an exam asks "why did change happen when it did?" always consider Cold War optics alongside domestic pressure.</div>
-    </div>
-
-    <div class="inf-card" data-num="02">
-      <div class="inf-num-tag">Inference 02</div>
-      <div class="inf-title">Legal equality ≠ economic equality — this gap explains the entire urban crisis</div>
-      <div class="inf-body">The Civil Rights Act (1964) and Voting Rights Act (1965) dismantled de jure (legal) discrimination. But redlining, unemployment, underfunded schools, and housing segregation — de facto discrimination — remained completely untouched by either law. This is the single most important reason race riots erupted in Northern cities AFTER the movement's greatest legal victories. The law changed the rules; it didn't change the economic game. This insight appears on virtually every high-level exam.</div>
-    </div>
-
-    <div class="inf-card" data-num="03">
-      <div class="inf-num-tag">Inference 03</div>
-      <div class="inf-title">Malcolm X and MLK were complements, not opposites</div>
-      <div class="inf-body">A common oversimplification: Malcolm X = violent, MLK = peaceful. More accurately, Malcolm X's assertive rhetoric made MLK seem like a reasonable, moderate negotiating partner to white politicians — creating political space for legislative compromise. Every social movement benefits from both a "radical flank" that shifts the Overton window and a negotiating voice that closes the deal. Exam questions often ask: "How did more militant groups impact mainstream civil rights gains?" This dynamic is the answer.</div>
-    </div>
-
-    <div class="inf-card" data-num="04">
-      <div class="inf-num-tag">Inference 04</div>
-      <div class="inf-title">All 1960s social movements shared a single tactical playbook</div>
-      <div class="inf-body">African Americans, Latinos (UFW), Native Americans (AIM), and women all employed strikingly similar methods: nonviolent direct action, grassroots organizing, legal challenges, and strategic media exposure. This was not coincidence — these movements actively learned from and inspired each other. Chávez explicitly modeled UFW tactics on the civil rights movement. On exams, you may be asked to compare tactics across groups or explain why the 1960s produced so many simultaneous movements.</div>
-    </div>
-
-    <div class="inf-card" data-num="05">
-      <div class="inf-num-tag">Inference 05</div>
-      <div class="inf-title">The ERA's failure shaped American politics more than its passage would have</div>
-      <div class="inf-body">The defeat of the Equal Rights Amendment galvanized Phyllis Schlafly's conservative women's movement and directly contributed to the rise of the New Right under Reagan. The ERA debate forced Americans to publicly define gender roles, and the backlash it generated reshaped the Republican Party for decades. A failed law can be a bigger historical turning point than a passed one — the political mobilization it triggered outlasted the movement that pushed it.</div>
-    </div>
-
-    <div class="inf-card" data-num="06">
-      <div class="inf-num-tag">Inference 06</div>
-      <div class="inf-title">Eisenhower's reluctance paradoxically strengthened Southern resistance</div>
-      <div class="inf-body">Because Eisenhower never publicly embraced school desegregation and delayed federal action, Southern officials believed they could resist indefinitely. He sent troops to Little Rock in 1957 only to enforce federal authority — not from personal conviction. His lack of moral leadership signaled to segregationists that they had room to maneuver, making the confrontations of the early 1960s more intense than they might otherwise have been. Leadership's moral clarity (or lack thereof) shapes how opponents calculate their options.</div>
-    </div>
-
-    <div class="inf-card" data-num="07">
-      <div class="inf-num-tag">Inference 07</div>
-      <div class="inf-title">Reactive legislation (post-tragedy) is systematically weaker</div>
-      <div class="inf-body">The Civil Rights Act of 1968 (Fair Housing Act) was passed in the immediate aftermath of MLK's assassination and the riots it triggered — Congress acting under emotional pressure rather than sustained political will. Reactive laws passed to calm crises typically lack strong enforcement mechanisms. The pattern: tragedy → political shock → hasty legislation → weak enforcement → persistent inequality. This explains why the Fair Housing Act did not meaningfully integrate American housing despite its bold language.</div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       SECTION 3: FLASHCARDS
-  ══════════════════════════════ -->
-  <section id="flashcards" class="section">
-    <div class="section-head">
-      <h2>Flashcards</h2>
-      <p>20 cards covering key terms, people, laws, and concepts. Click a card to flip it — see the answer on the back. Use the arrows to navigate.</p>
-    </div>
-
-    <div class="fc-controls">
-      <span class="fc-counter" id="fc-counter">Card 1 of 20</span>
-      <button class="btn" onclick="shuffleCards()">Shuffle</button>
-      <button class="btn" onclick="resetCards()">Reset</button>
-    </div>
-
-    <div class="fc-progress" id="fc-progress"></div>
-
-    <div class="fc-scene" onclick="flipCard()">
-      <div class="fc-inner" id="fc-inner">
-        <div class="fc-face fc-front" id="fc-front">
-          <div class="fc-category" id="fc-cat"></div>
-          <div class="fc-question" id="fc-q"></div>
-          <div class="fc-hint">CLICK TO FLIP →</div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          Plessy v. Ferguson (1896): "Separate but Equal" is constitutional
         </div>
-        <div class="fc-face fc-back" id="fc-back">
-          <div class="fc-category" id="fc-cat-b">ANSWER</div>
-          <div class="fc-answer" id="fc-a"></div>
-          <div class="fc-hint">CLICK TO FLIP BACK</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          States pass Jim Crow laws — separate schools, transit, restaurants, restrooms
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          Systematic second-class citizenship for African Americans for 60+ years
         </div>
       </div>
+      <p class="detail-text">The Supreme Court's 1896 ruling gave legal cover to Southern state legislatures. The "equal" part was never enforced — schools, hospitals, and public facilities for Black Americans were consistently inferior. This legal framework made segregation <span class="key-term">de jure</span> (by law), and it took another Supreme Court ruling in <span class="key-term">Brown v. Board of Education (1954)</span> to overturn it. Plessy is the root cause of nearly every major civil rights event of the 20th century.</p>
     </div>
+  </div>
 
-    <div class="fc-nav">
-      <button class="btn" onclick="moveCard(-1)">← Previous</button>
-      <button class="btn rust" onclick="moveCard(1)">Next →</button>
+  <!-- CONCEPT 2 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(126,184,201,0.15);color:var(--accent2);">02</div>
+      <div class="concept-title">Brown v. Board → Resistance → Federal Intervention (Little Rock)</div>
+      <div class="concept-toggle">▾</div>
     </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       SECTION 4: PRACTICE EXAM
-  ══════════════════════════════ -->
-  <section id="exam" class="section">
-    <div class="section-head">
-      <h2>Practice Exam</h2>
-      <p>20 questions — 16 multiple choice and 4 short answer — covering every sub-topic. Click answer choices to check yourself instantly. Reveal the full explanation for each question.</p>
-    </div>
-
-    <div class="quiz-status">
-      <div>
-        <div class="quiz-score" id="qs-score">0/20</div>
-        <div class="quiz-score-label">answered</div>
-      </div>
-      <div class="quiz-bar-wrap">
-        <div class="quiz-bar"><div class="quiz-bar-fill" id="qs-bar"></div></div>
-        <div class="quiz-bar-label" id="qs-label">Select an answer to get started</div>
-      </div>
-      <button class="btn" onclick="resetExam()">Reset All</button>
-    </div>
-
-    <div id="exam-container"></div>
-  </section>
-
-  <!-- ══════════════════════════════
-       SECTION 5: ANNEX
-  ══════════════════════════════ -->
-  <section id="annex" class="section">
-    <div class="section-head">
-      <h2>Watch Out Annex</h2>
-      <p>The most strategic section. Read this the night before your exam.</p>
-    </div>
-
-    <div class="subsection-title">⭐ Top 5 High-Yield Facts to Master</div>
-    <div class="hiyield-list">
-      <div class="hi-item">
-        <div class="hi-rank">1</div>
-        <div class="hi-content">
-          <div class="hi-main">De jure vs. de facto segregation — definitions AND examples, cold</div>
-          <div class="hi-detail">De jure = legal segregation (Jim Crow laws, poll taxes, literacy tests). De facto = segregation in practice without explicit laws (redlining, concentrated poverty, underfunded schools in Northern cities). The exam WILL ask you to distinguish these.</div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          Brown (1954): separate schools are unconstitutional; Brown II orders desegregation "with all deliberate speed"
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          Southern states stall; Gov. Faubus sends Arkansas National Guard to block Little Rock Nine (1957)
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          Eisenhower federalizes Guard, sends 1,000 paratroopers — establishes federal supremacy over state defiance
         </div>
       </div>
-      <div class="hi-item">
-        <div class="hi-rank">2</div>
-        <div class="hi-content">
-          <div class="hi-main">Three separate civil rights laws: 1964, 1965, and 1968 — different content, different impact</div>
-          <div class="hi-detail">1964 Civil Rights Act: banned discrimination in public accommodations and employment. 1965 Voting Rights Act: ended literacy tests, provided federal oversight of elections. 1968 Fair Housing Act: banned housing discrimination. Know what each did — and what it DIDN'T solve.</div>
+      <p class="detail-text">The Brown decision exposed a critical gap: the Court could rule but had no automatic enforcement mechanism. The phrase "with all deliberate speed" (Brown II) gave Southern states an escape hatch. It took the spectacle of Elizabeth Eckford facing a screaming mob on national television to force Eisenhower — who personally opposed forced integration — to act. <span class="key-term">Television</span> becomes a critical political tool here for the first time in civil rights history.</p>
+    </div>
+  </div>
+
+  <!-- CONCEPT 3 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(196,126,126,0.15);color:var(--accent3);">03</div>
+      <div class="concept-title">Montgomery Bus Boycott → SCLC → Nonviolent Strategy</div>
+      <div class="concept-toggle">▾</div>
+    </div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          Rosa Parks arrested (Dec. 1, 1955); Jo Ann Robinson organizes boycott within hours
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          381-day boycott; economic pressure on bus company; MLK emerges as leader
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          Supreme Court bans bus segregation (1956); SCLC founded 1957; nonviolent model established
         </div>
       </div>
-      <div class="hi-item">
-        <div class="hi-rank">3</div>
-        <div class="hi-content">
-          <div class="hi-main">Why urban riots erupted AFTER the legal victories of 1964–65</div>
-          <div class="hi-detail">Because neither act addressed economic inequality, unemployment, or housing discrimination in Northern cities. Laws changed the legal framework; they didn't change material conditions. This is the central theme of post-1965 civil rights history.</div>
+      <p class="detail-text">Rosa Parks was not acting randomly — she was an NAACP officer trained in nonviolent resistance. Jo Ann Robinson of the Women's Political Council had the boycott leaflets printed within hours. The boycott's success demonstrated that <span class="key-term">economic pressure</span> could succeed where legal battles alone couldn't. MLK synthesized Gandhi, Thoreau, and Jesus into a philosophy he called <span class="key-term">"soul force."</span> The SCLC then institutionalized this approach across the South.</p>
+    </div>
+  </div>
+
+  <!-- CONCEPT 4 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(126,201,126,0.15);color:var(--accent4);">04</div>
+      <div class="concept-title">Freedom Riders → Federal Enforcement → ICC Order</div>
+      <div class="concept-toggle">▾</div>
+    </div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          CORE & SNCC freedom riders test Supreme Court rulings banning segregated interstate travel (1961)
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          Riders beaten in Birmingham & Anniston; Bus 2 firebombed; Kennedy forced to act
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          400 federal marshals deployed; ICC bans segregation in ALL interstate travel facilities
         </div>
       </div>
-      <div class="hi-item">
-        <div class="hi-rank">4</div>
-        <div class="hi-content">
-          <div class="hi-main">Leaders AND their philosophies: MLK, Malcolm X, Chávez, AIM, Friedan, NOW</div>
-          <div class="hi-detail">Don't just memorize names. Know: MLK = nonviolence + integration. Malcolm X = Black nationalism + self-defense. Chávez = nonviolent labor action. AIM = sovereignty + treaty rights. Friedan = "The Feminine Mystique" + NOW. Each leader's philosophy explains their tactics.</div>
+      <p class="detail-text">The freedom riders' strategy was deliberate provocation: <span class="key-term">they hoped to spark violent reaction</span> to force Kennedy to enforce existing law. This is a key exam insight — the violence was not an obstacle; it was the mechanism. The ICC order went further than even the original Supreme Court rulings, covering waiting rooms, restrooms, and lunch counters. This "provoke-to-legislate" strategy would be repeated in Birmingham and Selma.</p>
+    </div>
+  </div>
+
+  <!-- CONCEPT 5 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(160,126,201,0.15);color:var(--accent5);">05</div>
+      <div class="concept-title">Birmingham Campaign → National Outrage → Civil Rights Act 1964</div>
+      <div class="concept-toggle">▾</div>
+    </div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          MLK & Shuttlesworth target Birmingham — "most segregated city in America" — to test nonviolence
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          "Bull" Connor uses fire hoses & dogs on children; TV broadcasts to millions; economic boycott
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          Birmingham desegregated; Kennedy demands Civil Rights Act; CRA signed by LBJ July 2, 1964
         </div>
       </div>
-      <div class="hi-item">
-        <div class="hi-rank">5</div>
-        <div class="hi-content">
-          <div class="hi-main">Affirmative Action origin: JFK Exec. Order 10925 (1961) — before the Civil Rights Act</div>
-          <div class="hi-detail">Affirmative action was proactive, not just reactive. It required federal contractors to take "affirmative action" to ensure equal opportunity — meaning actively recruit minorities, not just stop discriminating. This distinction between proactive and reactive policy appears on advanced exams.</div>
+      <p class="detail-text">Birmingham was strategically chosen because its oppressiveness was extreme and its police commissioner, <span class="key-term">"Bull" Connor</span>, was predictably brutal. The marchers understood that the worse the crackdown, the stronger the national reaction. The "Letter from Birmingham Jail" — written to white moderate clergy — is one of the most important primary sources in American history. The <span class="key-term">Civil Rights Act of 1964</span> banned discrimination based on race, religion, national origin, and gender.</p>
+    </div>
+  </div>
+
+  <!-- CONCEPT 6 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(232,184,109,0.15);color:var(--accent1);">06</div>
+      <div class="concept-title">Freedom Summer & MFDP → Betrayal → Black Power</div>
+      <div class="concept-toggle">▾</div>
+    </div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          1964: SNCC organizes voter registration in Mississippi; 3 workers murdered; MFDP formed
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          Fannie Lou Hamer's televised testimony; Johnson offers only 2 of 68 seats; leaders accept compromise
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          SNCC feels betrayed; radicalization accelerates; Carmichael's "Black Power" slogan emerges 1966
         </div>
       </div>
+      <p class="detail-text">This is the critical turning point where the unified civil rights movement fractures. SNCC workers had risked their lives for years, and when their political vehicle (the MFDP) was sidelined for Johnson's electoral strategy, the disillusionment was total. <span class="key-term">Fannie Lou Hamer's</span> response — "We didn't come all this way for no two seats" — captures the moment. From this point, the movement splits between integration (SCLC/MLK) and self-determination (SNCC/Black Power).</p>
     </div>
+  </div>
 
-    <div class="subsection-title">⚠️ Trap Library — 5 Trick Questions</div>
-
-    <div class="trap-card">
-      <div class="trap-label">Trap 1 — The Scope Trap</div>
-      <div class="trap-q">"The Civil Rights Act of 1964 ended segregation everywhere in the U.S."</div>
-      <div class="trap-exp">Wrong. It ended de jure (legal) segregation primarily in the South. De facto segregation in Northern cities persisted entirely through economic mechanisms untouched by the law. This is exactly why riots erupted in Northern cities despite the Act's passage. The trap: assuming a law that changes rules also changes realities.</div>
+  <!-- CONCEPT 7 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(126,184,201,0.15);color:var(--accent2);">07</div>
+      <div class="concept-title">De Facto Segregation → Urban Riots → Kerner Commission</div>
+      <div class="concept-toggle">▾</div>
     </div>
-
-    <div class="trap-card">
-      <div class="trap-label">Trap 2 — The Stereotype Trap</div>
-      <div class="trap-q">"Malcolm X was a violent extremist" or "The Black Panthers were a terrorist group"</div>
-      <div class="trap-exp">Oversimplified. Malcolm X advocated self-defense against violence, not aggression. The Black Panthers ran community programs — free breakfasts for children, health clinics — alongside their militant rhetoric. Exams may present them as simply violent to see if you offer nuanced analysis of their actual goals, programs, and historical context.</div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          Northern segregation by custom (de facto): slums, white flight, police brutality, unemployment 2x national rate
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          Watts riots (1965, 34 dead); 100+ cities riot 1967; Vietnam diverts Great Society funding
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          Kerner Commission: "Our nation is moving toward two societies, one black, one white — separate and unequal." Root cause: white racism
+        </div>
+      </div>
+      <p class="detail-text">White Americans' confusion — "Why riot after winning so many victories?" — reveals a fundamental misunderstanding. The Civil Rights Acts addressed <span class="key-term">de jure</span> (legal) discrimination; they did not and could not address <span class="key-term">de facto</span> (actual practice) discrimination in housing, employment, and education. As MLK noted, ending legal segregation is different from achieving economic equality. The Kerner Report was ignored because its solutions (massive investment in cities) faced white political opposition.</p>
     </div>
+  </div>
 
-    <div class="trap-card">
-      <div class="trap-label">Trap 3 — The Eisenhower Trap</div>
-      <div class="trap-q">"Eisenhower was a supporter of civil rights because he sent troops to Little Rock"</div>
-      <div class="trap-exp">He was personally reluctant. He took a "middle of the road" approach specifically to avoid alienating Southern conservatives. He sent troops to Little Rock (1957) to uphold federal authority over state law — not from moral conviction about desegregation. His private views and public administrative duties were very different. Don't conflate administrative action with ideological commitment.</div>
+  <!-- CONCEPT 8 -->
+  <div class="concept-card" onclick="toggleConcept(this)">
+    <div class="concept-header">
+      <div class="concept-num" style="background:rgba(196,126,126,0.15);color:var(--accent3);">08</div>
+      <div class="concept-title">Women's Movement → NOW → ERA Battle</div>
+      <div class="concept-toggle">▾</div>
     </div>
-
-    <div class="trap-card">
-      <div class="trap-label">Trap 4 — The Three Laws Confusion Trap</div>
-      <div class="trap-q">Questions that mix up what year/what the 1964, 1965, and 1968 laws did</div>
-      <div class="trap-exp">There are THREE major civil rights laws. Many students merge them into one vague "Civil Rights Act." 1964 = public places + employment. 1965 = voting rights (literacy tests). 1968 = fair housing. Exams will give you a specific issue and ask which law addressed it — or trick you by asking about housing discrimination and seeing if you say "1964."</div>
+    <div class="concept-body">
+      <div class="flow-row">
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent1);">Concept</div>
+          Friedan's Feminine Mystique (1963) + Civil Rights Act 1964 banning gender discrimination → women organizing
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent2);">Mechanism</div>
+          NOW founded 1966; EEOC pressured; ERA passes Congress 1972; needs 38 states to ratify
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">
+          <div class="label" style="color:var(--accent4);">Impact</div>
+          ERA fails (only 35 states by 1982); but women's college/professional enrollment surges; New Right emerges as counterforce
+        </div>
+      </div>
+      <p class="detail-text">The women's movement made its greatest gains legislatively (Title IX 1972, Roe v. Wade 1973, expanded EEOC) but failed constitutionally (ERA defeat). <span class="key-term">Phyllis Schlafly</span> successfully framed the ERA as a threat to traditional family structure, mobilizing a conservative coalition that became the New Right — a coalition that would elect Reagan in 1980. The ERA fight is the template for culture-war politics in the late 20th century.</p>
     </div>
+  </div>
 
-    <div class="trap-card">
-      <div class="trap-label">Trap 5 — The ERA Success Trap</div>
-      <div class="trap-q">"The women's movement was successful — the ERA became law"</div>
-      <div class="trap-exp">The ERA FAILED ratification. Congress passed it in 1972, but it was never ratified by enough states. Phyllis Schlafly's conservative campaign argued it would eliminate military service exemptions and alimony protections for women. Women gained real legal gains (Title IX, equal pay progress, political representation) but the ERA itself died. Always distinguish what the movement accomplished from what its specific legislative goal achieved.</div>
+  <!-- TIMELINE -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:2.5rem 0 1rem;">Key Events Timeline</h3>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1896</div><div class="tl-text"><b>Plessy v. Ferguson</b> <span>— "separate but equal" becomes constitutional doctrine; Jim Crow laws proliferate</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1954</div><div class="tl-text"><b>Brown v. Board of Education</b> <span>— Supreme Court unanimously overturns Plessy for public schools</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1955–56</div><div class="tl-text"><b>Montgomery Bus Boycott</b> <span>— 381 days; MLK emerges; Supreme Court bans bus segregation</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1957</div><div class="tl-text"><b>Little Rock Crisis & Civil Rights Act of 1957</b> <span>— Eisenhower sends troops; first civil rights law since Reconstruction</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1960</div><div class="tl-text"><b>Greensboro Sit-Ins & SNCC founded</b> <span>— students desegregate 48 cities' lunch counters in 11 states</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1961</div><div class="tl-text"><b>Freedom Rides</b> <span>— CORE & SNCC; ICC bans segregation in all interstate travel facilities</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1963</div><div class="tl-text"><b>Birmingham Campaign & March on Washington</b> <span>— MLK's "I Have a Dream"; Kennedy demands Civil Rights Act</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1964</div><div class="tl-text"><b>Civil Rights Act of 1964 & Freedom Summer</b> <span>— bans discrimination in employment & public life; MFDP rejected at DNC</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1965</div><div class="tl-text"><b>Malcolm X assassinated; Voting Rights Act; Watts Riots</b> <span>— literacy tests banned; federal examiners register voters</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1966</div><div class="tl-text"><b>"Black Power" & Black Panthers founded</b> <span>— Carmichael in Greenwood; Newton & Seale in Oakland</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1968</div><div class="tl-text"><b>MLK assassinated; Civil Rights Act of 1968</b> <span>— 100 cities riot; fair housing law passed</span></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1972</div><div class="tl-text"><b>ERA passes Congress; Title IX enacted; NOW at 175,000 members</b></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1982</div><div class="tl-text"><b>ERA fails ratification</b> <span>— only 35 of 38 states needed; Schlafly's Stop-ERA campaign succeeds</span></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ SECTION 2 ═══ -->
+<section id="inferences" class="section">
+  <h2 class="sec-title">Logical Inferences & Deep Analysis</h2>
+  <p class="sec-sub">Seven "hidden" connections that go beyond the textbook — the kind of insights that appear on high-level exams. Understand the reasoning.</p>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #1 — Strategy</div>
+    <h3>Violence Was the Tool, Not the Obstacle</h3>
+    <p>The Freedom Riders explicitly intended to provoke violent reaction. The Birmingham campaign chose Bull Connor because his brutality was predictable. The Selma march took a route they knew would result in state trooper attacks. This is a deliberate strategic pattern: civil rights leaders understood that nonviolent protesters being attacked on national television would force federal action. The violence was not a setback — it was the mechanism of change. Students often confuse this, thinking violence "despite" protest; in reality, violence "because of" protest was the point.</p>
+  </div>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #2 — Fracture Point</div>
+    <h3>The 1964 DNC Compromise Fractured the Movement More Than Any Attack</h3>
+    <p>External violence strengthened the movement. Internal betrayal broke it. When SNCC and MFDP workers who had been beaten and had colleagues murdered were offered 2 of 68 convention seats, they concluded that the Democratic Party — and by extension, moderate civil rights leadership — could not be trusted. This explains why Carmichael's "Black Power" emerged not after Bull Connor's fire hoses, but after a political back-room deal. The shift from integration to separatism was a rational response to perceived elite betrayal, not simply a radicalization driven by white violence.</p>
+  </div>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #3 — Northern Paradox</div>
+    <h3>Legal Victories Revealed the Limits of Law</h3>
+    <p>The Civil Rights Acts of 1964 and 1965 addressed de jure segregation but could not touch de facto segregation. When MLK moved his campaign to Chicago in 1966, he found that changing customs and economic structures was far harder than repealing Jim Crow laws. Angry whites threw rocks at marchers in a Northern city. This reveals a key insight: the legal phase of the civil rights movement was the easier phase. Economic equality required restructuring employment, housing, and education — which meant white Americans in the North had to give something up. Southern whites had to stop actively oppressing; Northern whites had to actively share resources. The second ask was harder.</p>
+  </div>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #4 — Television as Revolution</div>
+    <h3>Television Was the Civil Rights Movement's Most Powerful Weapon</h3>
+    <p>The Montgomery bus boycott was a local story. Little Rock was a national story because TV cameras were there. Birmingham's children being attacked by police dogs was broadcast into living rooms across America. The Selma march's "Bloody Sunday" pre-empted a scheduled ABC broadcast. This pattern is consistent: every major legislative breakthrough followed a televised atrocity. This inference connects to a broader historical lesson — social movements need a mass communications platform. The civil rights movement's timing (1955–1965) coincided exactly with television becoming a mass medium in American homes.</p>
+  </div>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #5 — Malcolm X's Evolution</div>
+    <h3>Malcolm X's Pilgrimage to Mecca Was a Political Turning Point, Not Just a Personal One</h3>
+    <p>After visiting Mecca in 1964, Malcolm X worshipped alongside blue-eyed, blond-haired Muslims and concluded that Islam preached racial equality. He returned with a new philosophy: "Ballots or bullets." This shift — from separatism to conditional engagement with whites — threatened Elijah Muhammad's Black Muslim leadership and almost certainly contributed to Malcolm's assassination. If Malcolm had lived, the Black Power movement he would have shaped might have looked very different — more politically engaged, potentially even bridging the integration/separatism divide. His death removed the most intellectually flexible leader from the radical wing.</p>
+  </div>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #6 — Women's Movement Paradox</div>
+    <h3>The Civil Rights Movement Inspired Women — Then Discriminated Against Them</h3>
+    <p>Women activists in SNCC and SDS were assigned "lesser roles" and dismissed when they protested this arrangement. The same organizations that fought racial hierarchy maintained gender hierarchy internally. This radicalized many women, who realized that sexism was as structural as racism. The women's liberation movement thus grew directly out of the civil rights movement — using its language, tactics, and organizational models — while also reacting against the sexism within it. Betty Friedan and Gloria Steinem didn't emerge from a vacuum; they emerged partly in reaction to being told their concerns weren't "the real issue."</p>
+  </div>
+
+  <div class="inference-card">
+    <div class="insight-tag">Inference #7 — Conservative Backlash</div>
+    <h3>The Civil Rights Era Directly Created the "New Right"</h3>
+    <p>After 1965, Anthony Badger's excerpt notes, white Southerners "won the culture wars in the nation at large" by targeting civil rights gains as "violent, criminal, and immoral." The welfare backlash, law-and-order politics, and opposition to affirmative action were all ways of attacking the economic goals of civil rights without explicitly invoking race. Phyllis Schlafly's Stop-ERA campaign used identical rhetoric — framing equality as a threat to traditional values. The New Right coalition that elected Reagan in 1980 was built on the cultural backlash against 1960s social movements. Understanding this connection explains American political polarization for the next 40 years.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ SECTION 3 ═══ -->
+<section id="practice" class="section">
+  <h2 class="sec-title">Adaptive Practice Exam</h2>
+  <p class="sec-sub">20 questions mixing multiple-choice and short answer. Answer each question, then reveal the detailed explanation.</p>
+
+  <div class="score-bar" id="score-bar" style="display:none;">
+    <div>
+      <div class="score-num" id="score-display">0/15</div>
+      <div class="score-label">Multiple-choice score</div>
     </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       SECTION 6: TIMELINE
-  ══════════════════════════════ -->
-  <section id="timeline" class="section">
-    <div class="section-head">
-      <h2>Key Timeline</h2>
-      <p>The chronological backbone. Knowing when events happened relative to each other reveals cause-and-effect chains that isolated memorization misses.</p>
+    <div style="flex:1;">
+      <div style="font-size:13px; color:var(--muted); margin-bottom:0.5rem;">Performance</div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
+  </div>
 
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-year">1896</div>
-        <div class="tl-title">Plessy v. Ferguson — "Separate But Equal"</div>
-        <div class="tl-desc">Supreme Court establishes legal foundation for Jim Crow segregation. This ruling stands for nearly 60 years and is the target of the entire NAACP legal strategy.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1948</div>
-        <div class="tl-title">Truman's Executive Order 9981</div>
-        <div class="tl-desc">Desegregates the U.S. military. Dixiecrats bolt the Democratic Party; Strom Thurmond runs as States' Rights candidate, winning 4 Southern states.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1954</div>
-        <div class="tl-title">Brown v. Board of Education</div>
-        <div class="tl-desc">Supreme Court unanimously overturns Plessy. Chief Justice Earl Warren writes that "separate educational facilities are inherently unequal." Massive Southern resistance follows.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1955–56</div>
-        <div class="tl-title">Montgomery Bus Boycott</div>
-        <div class="tl-desc">Sparked by Rosa Parks's arrest. MLK emerges as national leader. The 381-day boycott succeeds; Supreme Court rules bus segregation unconstitutional.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1957</div>
-        <div class="tl-title">Little Rock Crisis</div>
-        <div class="tl-desc">Arkansas Governor Faubus uses National Guard to block Black students from Central High School. Eisenhower sends 101st Airborne — not from conviction, but to enforce federal law over state defiance.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1961</div>
-        <div class="tl-title">JFK Executive Order 10925 — Affirmative Action</div>
-        <div class="tl-desc">First official use of "affirmative action." Federal contractors required to take proactive steps to ensure equal employment opportunity regardless of race, creed, color, or national origin.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1963</div>
-        <div class="tl-title">March on Washington — "I Have a Dream"</div>
-        <div class="tl-desc">250,000 people march in D.C. MLK delivers "I Have a Dream" speech. The march directly pressures Congress toward civil rights legislation. Four girls killed in 16th Street Baptist Church bombing two weeks later.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1964</div>
-        <div class="tl-title">Civil Rights Act of 1964</div>
-        <div class="tl-desc">Outlaws discrimination in public accommodations and employment on the basis of race, color, religion, sex, or national origin. Addresses de jure discrimination in the South but does not touch Northern economic inequality.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1965</div>
-        <div class="tl-title">Voting Rights Act of 1965</div>
-        <div class="tl-desc">Bans literacy tests and other voter suppression devices. Provides for federal examiners in areas with histories of discrimination. Directly follows Bloody Sunday at Selma's Edmund Pettus Bridge.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1965–68</div>
-        <div class="tl-title">Urban Race Riots — Watts, Detroit, Newark</div>
-        <div class="tl-desc">Riots erupt in Northern cities despite legal gains. Root causes: unemployment, redlining, police brutality, de facto segregation. The Kerner Commission warns America is "moving toward two societies, one black, one white."</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1966</div>
-        <div class="tl-title">Black Power Movement & Black Panthers Founded</div>
-        <div class="tl-desc">Stokely Carmichael popularizes "Black Power." Black Panther Party founded in Oakland by Huey Newton and Bobby Seale — emphasis on armed self-defense, community programs, and economic independence.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1968</div>
-        <div class="tl-title">MLK Assassinated + Civil Rights Act of 1968</div>
-        <div class="tl-desc">MLK killed in Memphis. Nationwide riots follow. Congress passes Fair Housing Act within a week — reactive legislation under emotional pressure. The Act bans housing discrimination but is weakly enforced.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1972</div>
-        <div class="tl-title">ERA Passes Congress / Title IX Enacted</div>
-        <div class="tl-desc">Equal Rights Amendment passes Congress, sent to states for ratification. Title IX bans gender discrimination in federally funded education — the women's movement's most durable legislative achievement.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1972–82</div>
-        <div class="tl-title">ERA Ratification Battle & Failure</div>
-        <div class="tl-desc">Phyllis Schlafly's STOP ERA campaign defeats ratification. ERA falls 3 states short. Its defeat galvanizes conservative women and directly contributes to the rise of the New Right under Reagan.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">1973</div>
-        <div class="tl-title">Wounded Knee Occupation — AIM</div>
-        <div class="tl-desc">American Indian Movement occupies Wounded Knee, South Dakota for 71 days, demanding U.S. honor 1868 Fort Laramie Treaty. National media attention advances Native sovereignty issues.</div>
-      </div>
+  <!-- Q1 -->
+  <div class="question-card" data-q="1">
+    <div class="question-header">
+      <div class="q-num">Question 01 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">What was the primary legal precedent overturned by Brown v. Board of Education (1954)?</div>
     </div>
-  </section>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','1','C')"><div class="opt-letter">A</div>Marbury v. Madison (1803)</li>
+      <li class="option-item" onclick="selectOption(this,'B','1','C')"><div class="opt-letter">B</div>The Civil Rights Act of 1875</li>
+      <li class="option-item" onclick="selectOption(this,'C','1','C')"><div class="opt-letter">C</div>Plessy v. Ferguson (1896)</li>
+      <li class="option-item" onclick="selectOption(this,'D','1','C')"><div class="opt-letter">D</div>Morgan v. Virginia (1946)</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'1')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-1">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      Brown directly overturned Plessy v. Ferguson's "separate but equal" doctrine in public education. <strong>Why A is wrong:</strong> Marbury established judicial review — unrelated. <strong>Why B is wrong:</strong> The 1875 Act was struck down in 1883; Brown didn't address it. <strong>Why D is wrong:</strong> Morgan v. Virginia only struck down segregation on interstate buses — a narrower ruling that did not affect schools.
+    </div>
+  </div>
 
-</main>
+  <!-- Q2 -->
+  <div class="question-card" data-q="2">
+    <div class="question-header">
+      <div class="q-num">Question 02 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">The Freedom Riders of 1961 deliberately provoked violent reactions in the South primarily in order to:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','2','B')"><div class="opt-letter">A</div>Demonstrate that Southern whites could be reasoned with peacefully</li>
+      <li class="option-item" onclick="selectOption(this,'B','2','B')"><div class="opt-letter">B</div>Force the Kennedy administration to enforce existing Supreme Court rulings</li>
+      <li class="option-item" onclick="selectOption(this,'C','2','B')"><div class="opt-letter">C</div>Create support for a new civil rights bill in Congress</li>
+      <li class="option-item" onclick="selectOption(this,'D','2','B')"><div class="opt-letter">D</div>Raise money for the NAACP legal defense fund</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'2')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-2">
+      <div class="correct-label">✓ Correct Answer: B</div>
+      The text states directly: riders "hoped to provoke a violent reaction that would convince the Kennedy administration to enforce the law." The law already existed (Supreme Court rulings on interstate travel) — the problem was enforcement. <strong>Why C is wrong:</strong> The goal was not new legislation but enforcement of existing rulings. <strong>Why D is wrong:</strong> Fundraising was not the strategic objective stated in the sources.
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" data-q="3">
+    <div class="question-header">
+      <div class="q-num">Question 03 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Which of the following best explains why de facto segregation was harder to challenge than de jure segregation?</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','3','B')"><div class="opt-letter">A</div>Courts refused to hear cases involving de facto segregation</li>
+      <li class="option-item" onclick="selectOption(this,'B','3','B')"><div class="opt-letter">B</div>It required changing people's attitudes and economic structures rather than simply repealing laws</li>
+      <li class="option-item" onclick="selectOption(this,'C','3','B')"><div class="opt-letter">C</div>It was only found in the South, limiting the movement's reach</li>
+      <li class="option-item" onclick="selectOption(this,'D','3','B')"><div class="opt-letter">D</div>Federal civil rights laws explicitly protected de facto segregation</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'3')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-3">
+      <div class="correct-label">✓ Correct Answer: B</div>
+      The textbook states: "eliminating it requires changing people's attitudes rather than repealing laws." It was also "much more difficult to convince whites to share economic and social power." <strong>Why A is wrong:</strong> Courts did rule on segregation. <strong>Why C is wrong:</strong> De facto segregation was actually most severe in Northern cities after the Great Migration. <strong>Why D is wrong:</strong> Civil rights laws did not protect de facto segregation — they simply couldn't easily reach it.
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" data-q="4">
+    <div class="question-header">
+      <div class="q-num">Question 04 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Fannie Lou Hamer's testimony at the 1964 Democratic National Convention was significant because it:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','4','C')"><div class="opt-letter">A</div>Convinced President Johnson to seat all MFDP delegates</li>
+      <li class="option-item" onclick="selectOption(this,'B','4','C')"><div class="opt-letter">B</div>Led directly to the passage of the Voting Rights Act of 1965</li>
+      <li class="option-item" onclick="selectOption(this,'C','4','C')"><div class="opt-letter">C</div>Exposed the violence used to suppress Black voter registration and generated massive public support for the MFDP</li>
+      <li class="option-item" onclick="selectOption(this,'D','4','C')"><div class="opt-letter">D</div>Caused the Mississippi Democratic Party to voluntarily integrate</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'4')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-4">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      Hamer described being jailed and beaten for registering to vote. The response: "telegrams and telephone calls poured in to the convention in support of seating the MFDP." However, Johnson feared losing Southern white votes and pressured a compromise — the MFDP was not fully seated. <strong>Why A and D are wrong:</strong> Johnson offered only 2 of 68 seats; the Mississippi party did not integrate voluntarily. <strong>Why B is wrong:</strong> The Voting Rights Act connection is indirect — the MFDP's rejection actually radicalized SNCC.
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" data-q="5">
+    <div class="question-header">
+      <div class="q-num">Question 05 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Malcolm X's pilgrimage to Mecca in 1964 most directly resulted in:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','5','D')"><div class="opt-letter">A</div>His founding of the Black Panther Party with Huey Newton</li>
+      <li class="option-item" onclick="selectOption(this,'B','5','D')"><div class="opt-letter">B</div>His reconciliation with Elijah Muhammad and the Nation of Islam</li>
+      <li class="option-item" onclick="selectOption(this,'C','5','D')"><div class="opt-letter">C</div>His endorsement of nonviolent integration as championed by MLK</li>
+      <li class="option-item" onclick="selectOption(this,'D','5','D')"><div class="opt-letter">D</div>A shift toward racial equality through Islam and a new "ballots or bullets" approach to political engagement</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'5')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-5">
+      <div class="correct-label">✓ Correct Answer: D</div>
+      In Mecca, Malcolm worshipped alongside white Muslims and concluded that Islam preached racial equality. He returned with a revised view that included potential coalition with whites, and the "ballots or bullets" framework urged political participation. <strong>Why A is wrong:</strong> The Black Panthers were founded by Newton and Seale in Oakland, not Malcolm. <strong>Why B is wrong:</strong> Malcolm had already broken with Elijah Muhammad before the pilgrimage. <strong>Why C is wrong:</strong> He maintained armed self-defense as a right, which differed from MLK's nonviolence.
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card" data-q="6">
+    <div class="question-header">
+      <div class="q-num">Question 06 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">According to the Kerner Commission (1968), the primary cause of urban rioting in American cities was:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','6','D')"><div class="opt-letter">A</div>Communist infiltration of civil rights organizations</li>
+      <li class="option-item" onclick="selectOption(this,'B','6','D')"><div class="opt-letter">B</div>The rhetoric of Malcolm X and the Black Panthers</li>
+      <li class="option-item" onclick="selectOption(this,'C','6','D')"><div class="opt-letter">C</div>A lack of federal anti-poverty programs</li>
+      <li class="option-item" onclick="selectOption(this,'D','6','D')"><div class="opt-letter">D</div>White racism</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'6')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-6">
+      <div class="correct-label">✓ Correct Answer: D</div>
+      The Kerner Commission's report stated directly: "Our nation is moving toward two societies, one black, one white — separate and unequal." It named white racism as the primary cause and called for new jobs, housing, and an end to de facto segregation. This was politically explosive because it placed blame on the majority, not on rioters. <strong>Why A, B, and C are wrong:</strong> The Commission did not find Communist infiltration, Black Panther rhetoric, or simple poverty program deficiency as the root cause. It pointed to systemic white racism in housing, policing, and employment.
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card" data-q="7">
+    <div class="question-header">
+      <div class="q-num">Question 07 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">The Civil Rights Act of 1964 differed from the Voting Rights Act of 1965 primarily in that:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','7','B')"><div class="opt-letter">A</div>Only the 1964 Act applied to Southern states</li>
+      <li class="option-item" onclick="selectOption(this,'B','7','B')"><div class="opt-letter">B</div>The 1964 Act addressed broad discrimination in employment and public accommodations, while the 1965 Act specifically targeted voting barriers like literacy tests</li>
+      <li class="option-item" onclick="selectOption(this,'C','7','B')"><div class="opt-letter">C</div>The 1965 Act was more broadly worded and addressed both economic and political equality</li>
+      <li class="option-item" onclick="selectOption(this,'D','7','B')"><div class="opt-letter">D</div>The 1964 Act was vetoed by President Johnson but overridden by Congress</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'7')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-7">
+      <div class="correct-label">✓ Correct Answer: B</div>
+      CRA 1964 banned discrimination in employment, public accommodations, and established the EEOC. VRA 1965 specifically eliminated voter literacy tests and enabled federal examiners to register voters — targeting the specific mechanisms used to disenfranchise Black voters. <strong>Why D is wrong:</strong> Johnson signed the 1964 Act; it was not vetoed.
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card" data-q="8">
+    <div class="question-header">
+      <div class="q-num">Question 08 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Which of the following most directly explains why the Equal Rights Amendment failed to be ratified by 1982?</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','8','C')"><div class="opt-letter">A</div>A majority of women actively opposed women's suffrage</li>
+      <li class="option-item" onclick="selectOption(this,'B','8','C')"><div class="opt-letter">B</div>Congress repealed the ERA before states could ratify it</li>
+      <li class="option-item" onclick="selectOption(this,'C','8','C')"><div class="opt-letter">C</div>A conservative Stop-ERA campaign led by Phyllis Schlafly mobilized opposition by framing it as a threat to traditional family life</li>
+      <li class="option-item" onclick="selectOption(this,'D','8','C')"><div class="opt-letter">D</div>The Supreme Court ruled the ERA unconstitutional before ratification was complete</div>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'8')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-8">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      Schlafly's campaign argued the ERA would lead to women being drafted, end homemaker protections, and lead to same-sex marriage — framing equality as threatening to women who chose traditional roles. This mobilized religious conservatives and anti-feminists. The ERA got 35 of the 38 needed states. <strong>Why A, B, D are wrong:</strong> Congress passed the ERA and did not repeal it. The Supreme Court did not rule on it. Many women — including many who benefited from the women's movement — opposed the ERA for various reasons, but A's framing is anachronistic (this was not about suffrage).
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card" data-q="9">
+    <div class="question-header">
+      <div class="q-num">Question 09 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Stokely Carmichael's "Black Power" slogan most directly grew out of:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','9','B')"><div class="opt-letter">A</div>The assassination of Malcolm X in 1965</li>
+      <li class="option-item" onclick="selectOption(this,'B','9','B')"><div class="opt-letter">B</div>SNCC members' frustration over continued violence and the MFDP's rejection at the 1964 DNC</li>
+      <li class="option-item" onclick="selectOption(this,'C','9','B')"><div class="opt-letter">C</div>The success of the Voting Rights Act of 1965 in eliminating political barriers</li>
+      <li class="option-item" onclick="selectOption(this,'D','9','B')"><div class="opt-letter">D</div>The founding of the Black Panther Party in Oakland</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'9')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-9">
+      <div class="correct-label">✓ Correct Answer: B</div>
+      Carmichael declared "Black Power" in June 1966 during a Mississippi march, his face swollen from a beating. He was speaking for SNCC members who had been arrested and beaten repeatedly, had colleagues murdered in Freedom Summer, and felt betrayed by the DNC compromise of 1964. This was not an abstract philosophical shift — it was a response to cumulative trauma and political betrayal. <strong>Why A is wrong:</strong> Malcolm was assassinated in 1965, but the direct catalyst for Carmichael's slogan was the 1966 Mississippi context. <strong>Why D is wrong:</strong> The Black Panthers were founded after the "Black Power" slogan, partly inspired by it.
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="question-card" data-q="10">
+    <div class="question-header">
+      <div class="q-num">Question 10 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">The Birmingham campaign of 1963 was strategically significant primarily because:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','10','C')"><div class="opt-letter">A</div>It was the first time African Americans used nonviolent protest</li>
+      <li class="option-item" onclick="selectOption(this,'B','10','C')"><div class="opt-letter">B</div>It resulted in Governor George Wallace being removed from office</li>
+      <li class="option-item" onclick="selectOption(this,'C','10','C')"><div class="opt-letter">C</div>Televised police brutality against children created national outrage that convinced Kennedy to demand a Civil Rights Act</li>
+      <li class="option-item" onclick="selectOption(this,'D','10','C')"><div class="opt-letter">D</div>It was organized entirely by SNCC student volunteers without adult leadership</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'10')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-10">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      The textbook states: "TV cameras captured all of it, and millions of viewers heard the children screaming." The result: "convinced President Kennedy that only a new civil rights act could end racial violence." <strong>Why A is wrong:</strong> Nonviolent protest began much earlier (Montgomery, sit-ins, etc.). <strong>Why B is wrong:</strong> Wallace remained governor. <strong>Why D is wrong:</strong> MLK and the SCLC led the campaign; Shuttlesworth invited them specifically.
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="question-card" data-q="11">
+    <div class="question-header">
+      <div class="q-num">Question 11 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">President Eisenhower's response to the Little Rock Crisis in 1957 is best characterized as:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','11','C')"><div class="opt-letter">A</div>A proactive defense of civil rights based on his personal beliefs</li>
+      <li class="option-item" onclick="selectOption(this,'B','11','C')"><div class="opt-letter">B</div>An attempt to negotiate with Governor Faubus to reach a peaceful compromise</li>
+      <li class="option-item" onclick="selectOption(this,'C','11','C')"><div class="opt-letter">C</div>A reluctant use of federal authority to enforce a court order despite his personal reservations about forced integration</li>
+      <li class="option-item" onclick="selectOption(this,'D','11','C')"><div class="opt-letter">D</div>A decision driven by his support for the Civil Rights Act of 1957</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'11')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-11">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      Eisenhower had said "the fellow who tries to tell me that you can do these things by force is just plain nuts" — he personally opposed forced integration. But when Faubus defied a federal court order, Eisenhower had no choice but to act to preserve federal supremacy. He placed the Arkansas National Guard under federal control and sent 1,000 paratroopers — not out of civil rights conviction, but legal obligation. <strong>Why A is wrong:</strong> His personal beliefs were opposed to forced integration. <strong>Why D is wrong:</strong> The CRA 1957 was passed after Little Rock, not before.
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="question-card" data-q="12">
+    <div class="question-header">
+      <div class="q-num">Question 12 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Jo Ann Robinson's letter to the Montgomery mayor in 1954 — four days after the Brown decision — is historically significant primarily because it demonstrates:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','12','B')"><div class="opt-letter">A</div>That Rosa Parks planned her bus arrest with Robinson well in advance</li>
+      <li class="option-item" onclick="selectOption(this,'B','12','B')"><div class="opt-letter">B</div>That African American women's organizations had been organizing and preparing for direct action long before the Montgomery Bus Boycott</li>
+      <li class="option-item" onclick="selectOption(this,'C','12','B')"><div class="opt-letter">C</div>That the Women's Political Council was a branch of the NAACP</li>
+      <li class="option-item" onclick="selectOption(this,'D','12','B')"><div class="opt-letter">D</div>That the Montgomery Bus Boycott was planned immediately following the Brown decision</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'12')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-12">
+      <div class="correct-label">✓ Correct Answer: B</div>
+      Robinson wrote the letter four days after Brown, demanding bus seating reform — over a year before Parks's arrest. When Parks was arrested in December 1955, Robinson had boycott leaflets printed within hours. The WPC had members in every major institution across Montgomery. The boycott was not spontaneous — it was a prepared response by an existing organization. This challenges the "great man" narrative of civil rights history and shows the essential role of women's grassroots organizing.
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="question-card" data-q="13">
+    <div class="question-header">
+      <div class="q-num">Question 13 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Which of the following accurately describes the Black Panther Party's program?</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','13','D')"><div class="opt-letter">A</div>It was primarily a violent terrorist organization with no constructive agenda</li>
+      <li class="option-item" onclick="selectOption(this,'B','13','D')"><div class="opt-letter">B</div>It sought to integrate African Americans into mainstream white American culture</li>
+      <li class="option-item" onclick="selectOption(this,'C','13','D')"><div class="opt-letter">C</div>It was founded in Mississippi to continue Freedom Summer voter registration work</li>
+      <li class="option-item" onclick="selectOption(this,'D','13','D')"><div class="opt-letter">D</div>It combined armed self-defense against police brutality with community programs like free breakfasts, medical clinics, and daycare</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'13')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-13">
+      <div class="correct-label">✓ Correct Answer: D</div>
+      The textbook explicitly states that while Panthers were involved in police confrontations, "many of the Panthers' activities — the establishment of daycare centers, free breakfast programs, free medical clinics, assistance to the homeless — won support in the ghettos." <strong>Why A is wrong:</strong> The community programs are well-documented and substantial. <strong>Why B is wrong:</strong> The Panthers explicitly opposed integration in favor of self-sufficiency and self-determination. <strong>Why C is wrong:</strong> They were founded in Oakland, California, by Newton and Seale, not Mississippi.
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="question-card" data-q="14">
+    <div class="question-header">
+      <div class="q-num">Question 14 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">The National Organization for Women (NOW) was founded in 1966 primarily because:</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','14','C')"><div class="opt-letter">A</div>Betty Friedan wanted to create a political party for women</li>
+      <li class="option-item" onclick="selectOption(this,'B','14','C')"><div class="opt-letter">B</div>Women were excluded from the Civil Rights Act of 1964's protections</li>
+      <li class="option-item" onclick="selectOption(this,'C','14','C')"><div class="opt-letter">C</div>The EEOC was not adequately enforcing the gender discrimination ban already in the Civil Rights Act of 1964</li>
+      <li class="option-item" onclick="selectOption(this,'D','14','C')"><div class="opt-letter">D</div>Congress had failed to pass any legislation addressing gender discrimination</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'14')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-14">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      The textbook states: "By 1966, however, some women argued that the EEOC didn't adequately address women's grievances. That year, 28 women, including Betty Friedan, created NOW." The legal tool existed; the enforcement did not. <strong>Why B is wrong:</strong> The CRA 1964 DID include gender discrimination — it was enforcement that was lacking. <strong>Why D is wrong:</strong> The CRA 1964 had already addressed gender discrimination legislatively.
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="question-card" data-q="15">
+    <div class="question-header">
+      <div class="q-num">Question 15 <span class="q-type-badge badge-mc">Multiple Choice</span></div>
+      <div class="question-text">Which of the following most directly connects the Civil Rights Movement to the rise of the women's liberation movement?</div>
+    </div>
+    <ul class="options-list">
+      <li class="option-item" onclick="selectOption(this,'A','15','C')"><div class="opt-letter">A</div>MLK actively recruited women into SCLC leadership positions, creating a pipeline for feminist leaders</li>
+      <li class="option-item" onclick="selectOption(this,'B','15','C')"><div class="opt-letter">B</div>The Civil Rights Act of 1964 was originally written only for women and later amended to include race</li>
+      <li class="option-item" onclick="selectOption(this,'C','15','C')"><div class="opt-letter">C</div>Women activists within civil rights and antiwar organizations experienced gender discrimination within movements that espoused equality, inspiring them to organize for women's rights</li>
+      <li class="option-item" onclick="selectOption(this,'D','15','C')"><div class="opt-letter">D</div>Betty Friedan was a major fundraiser for SNCC before founding NOW</li>
+    </ul>
+    <button class="reveal-btn" onclick="revealAnswer(this,'15')">Reveal Explanation</button>
+    <div class="explanation-box" id="exp-15">
+      <div class="correct-label">✓ Correct Answer: C</div>
+      The textbook states: "many women felt the sting of discrimination when they became involved in the civil rights and antiwar movements...men led most of the activities, while women were assigned lesser roles." This hypocrisy radicalizing women who then organized the women's liberation movement using the same language, tactics, and organizational models of the civil rights movement. <strong>Why A is wrong:</strong> The SCLC was largely male-led. Ella Baker, who actually organized the SCLC's grassroots work, later criticized its male hierarchy.
+    </div>
+  </div>
+
+  <!-- SHORT ANSWER -->
+  <div class="question-card" data-q="sa1">
+    <div class="question-header">
+      <div class="q-num">Question 16 <span class="q-type-badge badge-sa">Short Answer</span></div>
+      <div class="question-text">Explain the difference between de jure and de facto segregation, and explain why the civil rights legislation of the 1960s was more effective at addressing one than the other. Use at least one specific example.</div>
+    </div>
+    <div class="sa-area">
+      <textarea class="sa-textarea" placeholder="Write your answer here..."></textarea>
+      <button class="reveal-btn" style="margin:0 0 0.5rem;" onclick="revealAnswer(this,'sa1')">Show Model Answer</button>
+    </div>
+    <div class="explanation-box" id="exp-sa1">
+      <div class="correct-label">✓ Model Answer</div>
+      <strong>De jure</strong> segregation is segregation by law (e.g., Jim Crow laws mandating separate schools, buses, and facilities). <strong>De facto</strong> segregation is segregation by custom and practice — maintained through housing patterns, economic inequality, and social discrimination rather than explicit law. The Civil Rights Acts of 1964 and the Voting Rights Act of 1965 effectively dismantled de jure segregation by banning discriminatory laws and protecting voting rights. However, de facto segregation in Northern cities — decaying schools in Black neighborhoods, white flight to suburbs, high unemployment, police brutality — persisted because laws alone cannot change economic structures or social attitudes. When MLK tried to address de facto segregation in Chicago in 1966, he encountered white violence and left without accomplishing his goals. The Kerner Commission concluded that addressing de facto segregation required massive economic investment in cities — which never came.
+    </div>
+  </div>
+
+  <div class="question-card" data-q="sa2">
+    <div class="question-header">
+      <div class="q-num">Question 17 <span class="q-type-badge badge-sa">Short Answer</span></div>
+      <div class="question-text">Compare Martin Luther King Jr.'s philosophy of nonviolent resistance with Malcolm X's approach, and explain how each leader's life experience shaped his strategy.</div>
+    </div>
+    <div class="sa-area">
+      <textarea class="sa-textarea" placeholder="Write your answer here..."></textarea>
+      <button class="reveal-btn" style="margin:0 0 0.5rem;" onclick="revealAnswer(this,'sa2')">Show Model Answer</button>
+    </div>
+    <div class="explanation-box" id="exp-sa2">
+      <div class="correct-label">✓ Model Answer</div>
+      <strong>MLK</strong> drew on Gandhi, Thoreau, and Jesus to develop "soul force" — nonviolent resistance that appealed to the conscience of white moderates and the federal government. Born into a middle-class Southern family and educated at Boston University, King understood that moral persuasion could shift public opinion and that legal change was the primary battlefield. He believed both Blacks and whites needed to be freed. <strong>Malcolm X</strong> experienced his father's likely murder by white racists, his mother's breakdown, and incarceration — experiences that shaped his view that white society was structurally oppressive. In prison he embraced the Nation of Islam's teaching that white people were the cause of Black suffering. His early approach: Black separatism, community self-reliance, and the right to armed self-defense. After his 1964 Mecca pilgrimage, he moderated toward interracial coalition-building. The strategies complement each other: MLK's respectability made him effective with white moderates and Congress; Malcolm's militancy made the federal government more willing to deal with MLK ("better King than Malcolm").
+    </div>
+  </div>
+
+  <div class="question-card" data-q="sa3">
+    <div class="question-header">
+      <div class="q-num">Question 18 <span class="q-type-badge badge-sa">Short Answer</span></div>
+      <div class="question-text">Analyze the role of television in advancing the Civil Rights Movement. Identify at least two specific events where television coverage was decisive, and explain the mechanism by which it influenced change.</div>
+    </div>
+    <div class="sa-area">
+      <textarea class="sa-textarea" placeholder="Write your answer here..."></textarea>
+      <button class="reveal-btn" style="margin:0 0 0.5rem;" onclick="revealAnswer(this,'sa3')">Show Model Answer</button>
+    </div>
+    <div class="explanation-box" id="exp-sa3">
+      <div class="correct-label">✓ Model Answer</div>
+      Television was the civil rights movement's most powerful political weapon because it transformed local acts of violence and resistance into national moral crises. <strong>Little Rock (1957):</strong> TV cameras broadcast Elizabeth Eckford facing an abusive crowd outside Central High School. The textbook notes "the nation watched the televised coverage" — this public spectacle forced Eisenhower, who personally opposed forced integration, to send 1,000 paratroopers. <strong>Birmingham (1963):</strong> TV cameras captured Bull Connor's police using fire hoses and attack dogs against children. "Millions of viewers heard the children screaming." This directly convinced President Kennedy that a Civil Rights Act was politically necessary. The mechanism: nonviolent protesters being violently attacked created a moral clarity that was impossible for moderate white Americans to ignore. It reframed the question from "should we integrate?" to "should we allow this?" Television made that moral question undeniable by making it visceral and immediate. Without television, both events would have remained regional controversies.
+    </div>
+  </div>
+
+  <div class="question-card" data-q="sa4">
+    <div class="question-header">
+      <div class="q-num">Question 19 <span class="q-type-badge badge-sa">Short Answer</span></div>
+      <div class="question-text">Explain how the MFDP's rejection at the 1964 Democratic National Convention contributed to the rise of Black Power. What does this reveal about the limits of working within the existing political system?</div>
+    </div>
+    <div class="sa-area">
+      <textarea class="sa-textarea" placeholder="Write your answer here..."></textarea>
+      <button class="reveal-btn" style="margin:0 0 0.5rem;" onclick="revealAnswer(this,'sa4')">Show Model Answer</button>
+    </div>
+    <div class="explanation-box" id="exp-sa4">
+      <div class="correct-label">✓ Model Answer</div>
+      SNCC organized the Mississippi Freedom Democratic Party to gain representation at the 1964 DNC after Freedom Summer — during which three civil rights workers were murdered and many more were beaten. Fannie Lou Hamer's nationally televised testimony generated massive public support. Yet President Johnson, fearing the loss of Southern white votes, pressured civil rights leaders to accept a compromise: only 2 of Mississippi's 68 seats. Hamer's response — "We didn't come all this way for no two seats" — captured the betrayal felt by SNCC workers. This event revealed that the Democratic Party's commitment to civil rights was conditional on electoral strategy, not principle. For SNCC members who had risked and lost lives, this was the breaking point. It demonstrated that systemic change through the existing political system required those in power to voluntarily cede advantage — which they would not do when it threatened their electoral interests. Carmichael's "Black Power" (1966) was the direct philosophical conclusion: if the system won't give you power, you must build your own, independently. This is not simply a "radicalization" — it is a rational political response to a structural limit.
+    </div>
+  </div>
+
+  <div class="question-card" data-q="sa5">
+    <div class="question-header">
+      <div class="q-num">Question 20 <span class="q-type-badge badge-sa">Short Answer</span></div>
+      <div class="question-text">How did the Civil Rights Movement's achievements fall short of economic equality? Refer to at least two pieces of evidence from the study material.</div>
+    </div>
+    <div class="sa-area">
+      <textarea class="sa-textarea" placeholder="Write your answer here..."></textarea>
+      <button class="reveal-btn" style="margin:0 0 0.5rem;" onclick="revealAnswer(this,'sa5')">Show Model Answer</button>
+    </div>
+    <div class="explanation-box" id="exp-sa5">
+      <div class="correct-label">✓ Model Answer</div>
+      The Civil Rights Movement achieved landmark legal victories — the CRA 1964, VRA 1965, CRA 1968 — that ended de jure segregation and protected voting rights. However, economic equality remained elusive. First, by 1990, "white flight" had reversed much of the progress toward school integration as whites moved to suburbs, taking tax revenue and leaving urban schools deteriorating. Second, the Kerner Commission (1968) found that urban African Americans still faced unemployment rates more than twice those of whites, decaying slums, and inferior schools — and its recommendations (massive economic investment) were ignored due to white political opposition. Third, the 1980s Supreme Court limited affirmative action (Richmond v. J. A. Croson Co.), undermining the economic mechanisms designed to correct historic discrimination. By 1989, the newly conservative Court had "continued to change the nation's course on civil rights." These facts demonstrate that legal equality and economic equality are distinct, and that achieving the latter required sustained political will that was ultimately unavailable in a system where white majorities controlled electoral outcomes.
+    </div>
+  </div>
+
+  <button class="submit-all-btn" onclick="calcScore()">Calculate My MC Score</button>
+</section>
+
+<!-- ═══════════════════════════════════════════════ SECTION 4 ═══ -->
+<section id="memory" class="section">
+  <h2 class="sec-title">High-Yield & Trap Library</h2>
+  <p class="sec-sub">The 5 most important things to master, plus 5 common exam traps with exact explanations of how they're written to mislead you.</p>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:1rem;">★ The 5 High-Yield Essentials</h3>
+
+  <div class="mem-card">
+    <div class="mem-num">01</div>
+    <div class="mem-title">De Jure vs. De Facto Segregation — The Two-Track Problem</div>
+    <div class="mem-body">Know the distinction cold. De jure = by law (Jim Crow, Plessy). De facto = by custom/economics (Northern ghettos, white flight). Civil rights laws killed de jure. De facto survived into the 21st century. Every question about "limits of the civil rights movement" or "continued inequality despite legislation" is asking about this distinction.</div>
+  </div>
+
+  <div class="mem-card">
+    <div class="mem-num">02</div>
+    <div class="mem-title">The Chain: Plessy → Brown → Little Rock → CRA 1964 → VRA 1965</div>
+    <div class="mem-body">Each step logically produces the next. Plessy enables Jim Crow. Brown overturns it legally. Little Rock tests enforcement. CRA 1964 legislates it broadly. VRA 1965 protects the ballot specifically. Know what each law/ruling DID and what it left UNADDRESSED. Gaps between laws are where exam questions hide.</div>
+  </div>
+
+  <div class="mem-card">
+    <div class="mem-num">03</div>
+    <div class="mem-title">Television as the Movement's Force Multiplier</div>
+    <div class="mem-body">Every major legislative breakthrough followed a televised atrocity: Little Rock → CRA 1957; Birmingham → JFK demands CRA; Selma → VRA 1965. This is not coincidence — it was strategy. Civil rights leaders chose targets, timing, and tactics to maximize the visual impact of nonviolent protest being violently suppressed.</div>
+  </div>
+
+  <div class="mem-card">
+    <div class="mem-num">04</div>
+    <div class="mem-title">The Movement Fracture: 1964 DNC → Black Power → Conservative Backlash</div>
+    <div class="mem-body">The unified civil rights movement broke at the 1964 DNC compromise. SNCC's radicalization → Black Power → urban riots → white fear → New Right → Reagan. This chain explains 20 years of American politics. The Kerner Commission's ignored report sits in the middle: diagnosed the problem, recommended solutions, was politically buried.</div>
+  </div>
+
+  <div class="mem-card">
+    <div class="mem-num">05</div>
+    <div class="mem-title">Women's Movement: Inspired by Civil Rights, Betrayed by Civil Rights Organizations</div>
+    <div class="mem-body">The women's liberation movement used civil rights language, tactics, and organizational models — but was directly inspired by experiencing sexism within civil rights and antiwar organizations. Key sequence: CRA 1964 bans gender discrimination → EEOC enforces poorly → NOW founded 1966 → ERA passes Congress 1972 → Schlafly's Stop-ERA → New Right → ERA fails 1982. Know what NOW accomplished vs. what failed.</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;margin:2rem 0 1rem;">⚠ The Trap Library</h3>
+
+  <div class="trap-card">
+    <div class="trap-label">Trap #1 — Sequence Confusion</div>
+    <h3>"Rosa Parks spontaneously refused to give up her seat, inspiring the Montgomery Bus Boycott."</h3>
+    <p>This makes the boycott sound reactive and accidental. In reality, Jo Ann Robinson and the Women's Political Council had been organizing for over a year and had leaflets ready within hours of Parks's arrest. Parks herself was an NAACP officer trained in nonviolent resistance. A question may contrast "spontaneous" with "planned" — always choose the answer that recognizes the pre-existing organizational infrastructure.</p>
+    <p class="correction">→ The boycott was the result of years of preparation, not spontaneous reaction.</p>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-label">Trap #2 — Causal Confusion</div>
+    <h3>"The Civil Rights Act of 1964 was the goal of the Freedom Riders."</h3>
+    <p>The Freedom Riders' goal (1961) was to force the Kennedy administration to enforce existing Supreme Court rulings on interstate travel. The CRA 1964 was three years away and was inspired by Birmingham (1963), not the Freedom Rides. Exam questions sometimes present legislation as the planned goal of an earlier protest — always match protest to its actual immediate goal.</p>
+    <p class="correction">→ Freedom Riders wanted enforcement of Morgan v. Virginia (1946) and Boynton v. Virginia (1960), not new legislation.</p>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-label">Trap #3 — The Malcolm X Oversimplification</div>
+    <h3>"Malcolm X consistently advocated violence against white people."</h3>
+    <p>This is a caricature. Malcolm X advocated for the right to armed self-defense — which is not the same as advocating violence. Moreover, after his 1964 Mecca pilgrimage, he significantly moderated, worshipping alongside white Muslims and returning with a new "ballots or bullets" framework that prioritized electoral politics. His assassination prevented the full evolution of his thinking. Exam questions may test whether you understand the nuance of "self-defense" vs. "offensive violence" and his post-Mecca evolution.</p>
+    <p class="correction">→ Malcolm X evolved significantly; his later views moved toward conditional interracial coalition-building.</p>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-label">Trap #4 — The ERA and the 14th Amendment</div>
+    <h3>"The ERA was unnecessary because the 14th Amendment already guaranteed women equal rights."</h3>
+    <p>This was Schlafly's secondary argument, but it is historically and legally incorrect. The textbook (Bird excerpt) notes that women had been "subjected to varying, inconsistent, and often unfavorable decisions under the Fourteenth Amendment." The ERA would have provided a direct, clear constitutional guarantee. A question may ask you to evaluate this argument — the correct answer is that the 14th Amendment's application to women was inconsistent and the ERA would have been more direct and effective.</p>
+    <p class="correction">→ The 14th Amendment did NOT consistently protect women's rights; ERA advocates correctly identified it as insufficient.</p>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-label">Trap #5 — Post Hoc Fallacy on Urban Riots</div>
+    <h3>"Urban riots in the 1960s were caused by Black Power rhetoric and Malcolm X's preaching."</h3>
+    <p>This is the post-1965 white conservative framing described in the Badger excerpt — targeting civil rights gains "not crudely and overtly as black, but as violent, criminal, and immoral." The Kerner Commission explicitly rejected this interpretation, naming white racism and structural inequality (de facto segregation, police brutality, unemployment, housing discrimination) as the root causes. A question may present these two interpretations and ask you to evaluate which is better supported by evidence — the Kerner Commission's structural explanation is the historically supported answer.</p>
+    <p class="correction">→ The Kerner Commission identified white racism and structural inequality, not activist rhetoric, as the cause of urban riots.</p>
+  </div>
+</section>
 
 <script>
-// ── NAV ──
-function show(id, btn) {
+function switchTab(id, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
-
-// ── FLASHCARDS ──
-const cards = [
-  { cat: "Ch. 27 — Truman", q: "What did Executive Order 9981 (1948) accomplish?", a: "Desegregated the U.S. military. Signed by President Truman, it was one of the first major federal civil rights actions of the postwar era." },
-  { cat: "Ch. 27 — 1948 Election", q: "Who were the Dixiecrats and what did they do in 1948?", a: "Southern Democrats who opposed Truman's civil rights platform. They nominated Strom Thurmond as a States' Rights candidate, winning 4 Deep South states." },
-  { cat: "Ch. 27 — Eisenhower", q: "What was Eisenhower's 'middle of the road' approach to civil rights?", a: "He avoided strong civil rights legislation to keep his coalition intact. He sent troops to Little Rock (1957) only to preserve federal authority, not from personal conviction about desegregation." },
-  { cat: "Ch. 29 — Brown v. Board", q: "What precedent did Brown v. Board of Education (1954) overturn?", a: "It overturned Plessy v. Ferguson (1896) which had established 'separate but equal' as constitutional. The unanimous ruling declared racially segregated schools inherently unequal." },
-  { cat: "Ch. 29 — MLK", q: "What two philosophical traditions shaped MLK's approach to civil rights?", a: "Gandhi's nonviolent resistance (from India's independence movement) and Christian ethics — specifically the commandment to 'love thy neighbor as thyself.'" },
-  { cat: "Ch. 29 — Legislation", q: "What did the Civil Rights Act of 1964 specifically do?", a: "Outlawed discrimination in public accommodations (hotels, restaurants, theaters) and in employment on the basis of race, color, religion, sex, or national origin." },
-  { cat: "Ch. 29 — Legislation", q: "What did the Voting Rights Act of 1965 specifically do?", a: "Banned literacy tests and other voter suppression devices. Authorized federal examiners to oversee voter registration in areas with documented histories of discrimination." },
-  { cat: "Ch. 29 — Segregation", q: "What is the difference between de jure and de facto segregation?", a: "De jure = segregation enforced by law (Jim Crow laws, literacy tests). De facto = segregation in practice without explicit laws (redlining, concentrated poverty, underfunded schools). The Civil Rights Act addressed de jure; de facto persisted." },
-  { cat: "Ch. 29 — Urban Crisis", q: "Why did race riots erupt in Northern cities AFTER the legal victories of 1964–65?", a: "Because neither the Civil Rights Act nor the Voting Rights Act addressed economic discrimination — unemployment, redlining, housing segregation — that produced poverty in Northern cities. Laws changed the rules; they didn't change the economic game." },
-  { cat: "Ch. 29 — Militant Movement", q: "What did Malcolm X believe that differed most sharply from MLK?", a: "Malcolm X advocated Black nationalism, self-determination, economic independence, and the right to self-defense — rejecting racial integration as a goal and emphasizing a separate Black identity and community control." },
-  { cat: "Ch. 29 — Militant Movement", q: "What two things did the Black Panther Party combine in their platform?", a: "Armed self-defense and community service programs (free breakfasts for children, health clinics) combined with demands for economic independence and justice for Black communities." },
-  { cat: "Ch. 29 — Legislation", q: "What was the Civil Rights Act of 1968 and why was it limited?", a: "The Fair Housing Act banned discrimination in housing sales and rentals. It was passed reactively after MLK's assassination. It was limited because it lacked strong enforcement mechanisms and didn't address the underlying economic causes of residential segregation." },
-  { cat: "Ch. 31 — Latinos", q: "What were the four main goals of the Latino civil rights movement in the 1960s?", a: "Restoring land grants, securing fair wages for farm workers, gaining political empowerment and representation, and promoting cultural pride (the Chicano Movement)." },
-  { cat: "Ch. 31 — UFW", q: "What tactics did César Chávez use with the United Farm Workers?", a: "Nonviolent direct action: strikes, consumer boycotts (most famously the grape boycott), fasting, and marches — deliberately modeled on the African American civil rights playbook." },
-  { cat: "Ch. 31 — Native Americans", q: "What were the primary goals of the American Indian Movement (AIM)?", a: "Self-determination and tribal sovereignty, restoration of treaty rights broken by the U.S. government, protection of Native culture from forced assimilation, and reclamation of tribal lands." },
-  { cat: "Ch. 31 — Women", q: "What was 'The Feminine Mystique' and why was it significant?", a: "Betty Friedan's 1963 book that named and analyzed 'the problem that has no name' — the widespread, silent dissatisfaction of educated American women confined to domestic roles. It catalyzed the modern women's movement." },
-  { cat: "Ch. 31 — ERA", q: "Why did the Equal Rights Amendment fail ratification?", a: "Phyllis Schlafly's STOP ERA conservative campaign argued the ERA would eliminate beneficial legal protections for women (military exemptions, alimony, single-sex facilities). It fell 3 states short of the required 38." },
-  { cat: "Ch. 33 — Affirmative Action", q: "What was the origin of Affirmative Action and what did it require?", a: "JFK's Executive Order 10925 (1961) required federal contractors to take 'affirmative action' to ensure equal employment opportunity — meaning proactive recruitment of minorities, not just non-discrimination." },
-  { cat: "Ch. 33 — Black Power", q: "What was Stokely Carmichael's 'Black Power' movement about?", a: "Racial pride, Black self-determination, and economic power. Carmichael rejected the goal of integration into white society, instead emphasizing community control, cultural pride, and political power for Black Americans." },
-  { cat: "All Chapters — Synthesis", q: "Name one way the Cold War influenced domestic civil rights policy.", a: "The U.S. competed for the loyalty of non-white, newly independent nations in Africa and Asia. Segregation was Soviet propaganda against America, giving Truman (and later JFK) strategic geopolitical reasons to act on civil rights beyond moral conviction." }
-];
-
-let cardOrder = [...Array(cards.length).keys()];
-let cardIdx = 0;
-let seen = new Set();
-
-function renderCard() {
-  const i = cardOrder[cardIdx];
-  const c = cards[i];
-  document.getElementById('fc-cat').textContent = c.cat;
-  document.getElementById('fc-cat-b').textContent = c.cat;
-  document.getElementById('fc-q').textContent = c.q;
-  document.getElementById('fc-a').textContent = c.a;
-  document.getElementById('fc-inner').classList.remove('flipped');
-  document.getElementById('fc-counter').textContent = 'Card ' + (cardIdx + 1) + ' of ' + cards.length;
-  seen.add(cardIdx);
-  renderDots();
+function toggleConcept(card) {
+  card.classList.toggle('open');
 }
-
-function renderDots() {
-  const p = document.getElementById('fc-progress');
-  p.innerHTML = '';
-  cardOrder.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'fc-dot' + (i === cardIdx ? ' current' : (seen.has(i) ? ' seen' : ''));
-    p.appendChild(d);
-  });
+const answers = {};
+const correct = {};
+function selectOption(el, choice, qNum, rightAnswer) {
+  const parent = el.closest('.question-card');
+  parent.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[qNum] = choice;
+  correct[qNum] = rightAnswer;
 }
-
-function flipCard() { document.getElementById('fc-inner').classList.toggle('flipped'); }
-
-function moveCard(dir) {
-  cardIdx = Math.max(0, Math.min(cards.length - 1, cardIdx + dir));
-  renderCard();
-}
-
-function shuffleCards() {
-  for (let i = cardOrder.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [cardOrder[i], cardOrder[j]] = [cardOrder[j], cardOrder[i]];
+function revealAnswer(btn, qNum) {
+  const exp = document.getElementById('exp-' + qNum);
+  if (!exp) return;
+  exp.classList.add('visible');
+  const card = btn.closest('.question-card');
+  if (card && answers[qNum]) {
+    card.querySelectorAll('.option-item').forEach(o => {
+      const letter = o.querySelector('.opt-letter').textContent.trim();
+      if (letter === correct[qNum]) o.classList.add('correct');
+      else if (letter === answers[qNum] && answers[qNum] !== correct[qNum]) o.classList.add('incorrect');
+    });
   }
-  cardIdx = 0;
-  seen.clear();
-  renderCard();
+  btn.disabled = true;
+  btn.textContent = 'Explanation revealed';
 }
-
-function resetCards() {
-  cardOrder = [...Array(cards.length).keys()];
-  cardIdx = 0;
-  seen.clear();
-  renderCard();
-}
-
-renderCard();
-
-// ── EXAM ──
-const questions = [
-  { num: 1, type: 'mc', topic: 'Truman / Ch.27',
-    q: 'What was the PRIMARY motivation behind Truman\'s decision to desegregate the U.S. military in 1948?',
-    opts: ['A) Pressure from the NAACP\'s legal team forcing his hand','B) His deep personal commitment to racial equality throughout his career','C) Political pressures including Black voter support and Cold War diplomatic optics','D) A Supreme Court ruling ordering military desegregation'],
-    correct: 2, correctText: 'C — Cold War optics + Black voter political power',
-    explanation: 'C is correct. Truman was motivated by a combination: Black voters were growing in power in northern swing states, and segregation was a propaganda weapon the Soviets used against America in the Cold War. A is a partial factor but not the primary driver. B overstates — Truman was from Missouri and held complex racial views. D never happened.' },
-  { num: 2, type: 'mc', topic: '1948 Election',
-    q: 'The Dixiecrats\' nomination of Strom Thurmond in 1948 best illustrates which dynamic?',
-    opts: ['A) Southern Democrats enthusiastically embracing civil rights reform','B) The Democratic Party\'s internal fracturing over the civil rights question','C) Republicans successfully recruiting Southern conservatives','D) Third parties regularly winning presidential elections in America'],
-    correct: 1, correctText: 'B — Internal Democratic Party fracturing over civil rights',
-    explanation: 'B is correct. The Dixiecrat bolt showed that civil rights was breaking the New Deal coalition. C didn\'t occur until the 1960s-80s (Nixon\'s Southern Strategy). D is wrong — third parties almost never win the presidency.' },
-  { num: 3, type: 'mc', topic: 'Brown v. Board',
-    q: 'The Brown v. Board of Education ruling (1954) was significant primarily because it:',
-    opts: ['A) Immediately desegregated all public schools in the South within one year','B) Overturned the "separate but equal" legal precedent from Plessy v. Ferguson (1896)','C) Granted African Americans the right to vote without literacy tests','D) Required the federal government to equalize funding between Black and white schools'],
-    correct: 1, correctText: 'B — Overturned "separate but equal" from Plessy v. Ferguson',
-    explanation: 'B is correct. Brown demolished the legal logic of Plessy. A is wrong — implementation was slow, met massive resistance, and Little Rock (1957) showed schools weren\'t integrating. C describes the Voting Rights Act (1965). D was never a provision of the ruling.' },
-  { num: 4, type: 'mc', topic: 'MLK Philosophy',
-    q: 'MLK\'s philosophy of nonviolent civil disobedience was most directly influenced by:',
-    opts: ['A) Marcus Garvey\'s Black nationalist "Back to Africa" movement','B) Malcolm X\'s doctrine of self-defense and Black separatism','C) Mahatma Gandhi\'s methods and Christian ethics of love and brotherhood','D) The Black Panthers\' model of community organizing and armed patrols'],
-    correct: 2, correctText: 'C — Gandhi\'s nonviolence + Christian ethics',
-    explanation: 'C is correct. MLK explicitly drew on Gandhi (India\'s independence movement) and the Christian commandment to love one\'s neighbor. A and B represent opposite philosophical approaches. D (Black Panthers) emerged later, partly in reaction to MLK\'s perceived limitations.' },
-  { num: 5, type: 'mc', topic: 'March on Washington',
-    q: 'The 1963 March on Washington resulted most directly in which legislation?',
-    opts: ['A) The Voting Rights Act of 1965','B) The Civil Rights Act of 1968 (Fair Housing Act)','C) The Civil Rights Act of 1964','D) President Kennedy\'s executive order desegregating federal employment'],
-    correct: 2, correctText: 'C — The Civil Rights Act of 1964',
-    explanation: 'C is correct. The March created massive public pressure that helped push through the 1964 Civil Rights Act (passed after JFK\'s assassination, signed by LBJ). A (Voting Rights) came the following year, driven by Selma/Bloody Sunday. B came in 1968 after MLK\'s assassination. D predates the March.' },
-  { num: 6, type: 'mc', topic: 'Voting Rights',
-    q: 'Which specific mechanism of voter suppression was MOST directly targeted by the Voting Rights Act of 1965?',
-    opts: ['A) Poll taxes charged to register to vote in federal elections','B) Literacy tests used selectively to disqualify Black voters','C) Grandfather clauses exempting white voters from requirements','D) Whites-only primary elections in Southern states'],
-    correct: 1, correctText: 'B — Literacy tests',
-    explanation: 'B is correct. The VRA specifically banned literacy tests and provided federal examiners. A (poll taxes in federal elections) was addressed by the 24th Amendment (1964). C (grandfather clauses) had already been struck down. D (white primaries) were banned by Smith v. Allwright (1944).' },
-  { num: 7, type: 'mc', topic: 'De Jure / De Facto',
-    q: 'Redlining — denying mortgages to residents of predominantly Black neighborhoods — is best classified as:',
-    opts: ['A) De jure segregation because the FHA formally endorsed it as policy','B) De facto segregation producing racial separation through economic practice','C) A form of discrimination banned specifically by the Civil Rights Act of 1964','D) A type of voter suppression targeting minority communities'],
-    correct: 1, correctText: 'B — De facto segregation through economic practice',
-    explanation: 'B is correct. Redlining produced racial segregation through economic mechanisms without explicit racial laws — the definition of de facto. A is partially historically accurate (the FHA did endorse it) but the classification is still de facto. C is wrong — the 1964 Act covered public accommodations/employment, not lending. D is irrelevant.' },
-  { num: 8, type: 'mc', topic: 'Urban Violence',
-    q: 'Race riots in Northern cities during the mid-1960s primarily occurred because:',
-    opts: ['A) The Civil Rights Act explicitly excluded Northern states from its provisions','B) Malcolm X personally organized militant attacks on police departments','C) Legal victories did not address economic discrimination, unemployment, or housing inequality in Northern cities','D) The federal government refused to enforce the Civil Rights Act outside the South'],
-    correct: 2, correctText: 'C — Legal victories didn\'t address Northern economic inequality',
-    explanation: 'C is the central insight. The CRA was designed for Southern de jure discrimination. Northern communities faced persistent poverty, concentrated unemployment, and de facto housing segregation that no law addressed. A is factually wrong — the Act applied nationally. B is a stereotype. D mischaracterizes the enforcement dynamic.' },
-  { num: 9, type: 'mc', topic: 'Malcolm X',
-    q: 'Malcolm X\'s philosophy differed from MLK\'s SCLC primarily in its:',
-    opts: ['A) Rejection of nonviolence and active planning of armed revolution against the government','B) Emphasis on self-determination, economic independence, and Black identity rather than integration','C) Focus on using the federal courts to overturn discriminatory laws','D) Preference for working directly with white liberal politicians and Democratic Party leadership'],
-    correct: 1, correctText: 'B — Self-determination, economic independence, Black identity vs. integration',
-    explanation: 'B is correct. Malcolm X advocated Black self-determination and identity — not violent revolution. A overstates; he advocated self-defense against attacks. C describes the NAACP legal strategy. D was aligned with the moderate civil rights wing; Malcolm X was highly critical of white liberal allies.' },
-  { num: 10, type: 'mc', topic: 'Black Panthers',
-    q: 'The Black Panther Party\'s platform is best characterized by:',
-    opts: ['A) Strict adherence to MLK\'s nonviolent protest model','B) Calls for Black emigration to Africa following Garveyite nationalism','C) Armed self-defense combined with community service programs and demands for economic justice','D) Integration into mainstream political parties as their primary strategy'],
-    correct: 2, correctText: 'C — Armed self-defense + community programs + economic justice',
-    explanation: 'C is correct. The Panthers combined militant self-defense rhetoric with genuine community programs (free breakfasts, health clinics) and economic justice demands. A is wrong — they explicitly rejected nonviolence as sufficient. B describes Garveyism. D is the opposite of their approach.' },
-  { num: 11, type: 'mc', topic: 'César Chávez',
-    q: 'César Chávez\'s United Farm Workers most closely mirrored which strategy from the African American civil rights movement?',
-    opts: ['A) Armed self-defense and militant confrontation of corporate power','B) Mass legal challenges in the federal court system','C) Nonviolent direct action including strikes, consumer boycotts, and fasting','D) Separatism and economic self-sufficiency within the Latino community'],
-    correct: 2, correctText: 'C — Nonviolent direct action: strikes, boycotts, fasting',
-    explanation: 'C is correct. Chávez deliberately modeled UFW tactics on the civil rights playbook — fasting, the 300-mile march to Sacramento, and the iconic grape boycott. This is a key cross-movement connection. A describes the Panthers. B describes the NAACP. D describes Black nationalism.' },
-  { num: 12, type: 'mc', topic: 'Native Americans',
-    q: 'The American Indian Movement (AIM) primarily sought:',
-    opts: ['A) Full assimilation into mainstream American economic and social life','B) Tribal sovereignty, restoration of treaty rights, and cultural revitalization','C) Voting rights protections modeled specifically on the 1965 Voting Rights Act','D) Individual financial reparations payments to all Native Americans'],
-    correct: 1, correctText: 'B — Tribal sovereignty, treaty rights, cultural revitalization',
-    explanation: 'B is correct. AIM\'s core goals centered on self-determination — honoring broken treaties, protecting Native culture from forced assimilation, and tribal sovereignty. A is the opposite — AIM rejected assimilation. C was not their central focus. D (individual reparations) was not their primary demand.' },
-  { num: 13, type: 'mc', topic: 'Women\'s Movement',
-    q: '"The Feminine Mystique" contributed to the women\'s movement primarily by:',
-    opts: ['A) Proposing specific legislative remedies for gender discrimination in employment','B) Naming and analyzing the widespread silent dissatisfaction of American women in domestic roles','C) Organizing the first national women\'s march on Washington D.C.','D) Challenging the Supreme Court\'s interpretation of gender equality'],
-    correct: 1, correctText: 'B — Named and analyzed women\'s domestic dissatisfaction',
-    explanation: 'B is correct. Friedan\'s book identified "the problem that has no name" — the frustration of educated women confined to housewife roles. It catalyzed consciousness and inspired organizing. A is wrong — it was cultural analysis, not a policy proposal. C and D did not occur.' },
-  { num: 14, type: 'mc', topic: 'ERA',
-    q: 'The Equal Rights Amendment ultimately failed ratification primarily due to:',
-    opts: ['A) The Supreme Court ruling the ERA unconstitutional before ratification was complete','B) President Nixon\'s veto of the congressional resolution sending it to states','C) Conservative backlash arguing it would eliminate legal protections that benefited women','D) The amendment failing to achieve the required two-thirds vote in Congress'],
-    correct: 2, correctText: 'C — Conservative argument it would eliminate women\'s protections',
-    explanation: 'C is correct. Phyllis Schlafly\'s STOP ERA campaign argued the ERA would remove military service exemptions, alimony, and single-sex facility protections — reframing it as harmful to women. A is wrong — the Court doesn\'t rule on unratified amendments. B is wrong — Nixon didn\'t veto it. D is wrong — Congress passed the ERA in 1972.' },
-  { num: 15, type: 'mc', topic: 'Affirmative Action',
-    q: 'JFK\'s Executive Order 10925 (1961) on Affirmative Action was primarily designed to:',
-    opts: ['A) Penalize corporations that had historically discriminated against minorities','B) Set rigid numerical racial quotas for all American businesses and universities','C) Proactively ensure equal opportunity in federal contracting through active recruitment','D) Replace the need for separate civil rights legislation in Congress'],
-    correct: 2, correctText: 'C — Proactively ensure equal opportunity in federal contracting',
-    explanation: 'C is correct. "Affirmative action" meant taking proactive recruitment steps — not just stopping discrimination. A is about punishment, not the mechanism. B is a common misconception — early affirmative action was about outreach; hard quotas came later and were controversial (Bakke case). D is wrong — legislation was still essential.' },
-  { num: 16, type: 'mc', topic: 'Civil Rights Act 1968',
-    q: 'The Civil Rights Act of 1968 was least effective in addressing Northern racial inequality because:',
-    opts: ['A) The law applied only to Southern states where housing discrimination was most visible','B) It banned housing discrimination legally but could not eliminate the economic conditions producing segregated neighborhoods','C) President Johnson refused to fund the enforcement provisions of the act','D) Northern states had already enacted stronger fair housing laws making it redundant'],
-    correct: 1, correctText: 'B — Banned discrimination but not underlying economic inequality',
-    explanation: 'B is the nuanced, correct answer. The Fair Housing Act changed the legal rules around housing transactions but couldn\'t eliminate poverty, concentrated unemployment, or underfunded schools that kept neighborhoods segregated economically. Laws change rules; they don\'t automatically change economic realities. A is factually wrong. C didn\'t happen. D is largely false.' },
-  { num: 17, type: 'sa', topic: 'Synthesis',
-    q: 'In 2–3 sentences, explain why the Civil Rights movement\'s legal successes (1964–65) did NOT end racial inequality in American cities. Use at least two specific examples in your answer.',
-    sampleAnswer: 'The Civil Rights Act (1964) and Voting Rights Act (1965) targeted de jure segregation — explicit legal discrimination primarily in the South — but left Northern cities\' economic structures completely untouched. De facto segregation through redlining (which denied mortgages to Black families in certain neighborhoods), concentrated unemployment, and chronically underfunded urban schools continued unchanged, producing persistent poverty. This economic inequality is exactly why race riots erupted in Watts (1965), Detroit (1967), and Newark (1967) despite the legislation — the law changed the rules without changing the game.' },
-  { num: 18, type: 'sa', topic: 'Comparison',
-    q: 'Compare and contrast the philosophies of MLK and Malcolm X. Then explain how their approaches were actually complementary rather than simply opposed to one another.',
-    sampleAnswer: 'MLK pursued racial integration through nonviolent direct action, believing in working within American democratic institutions. Malcolm X advocated Black nationalism, self-defense, and economic self-sufficiency — rejecting integration as a desirable goal entirely. However, they were functionally complementary: Malcolm X\'s more assertive rhetoric made MLK appear to white politicians and the federal government as a reasonable moderate, creating the political space for legislative compromises. This "radical flank effect" — where more militant voices shift the Overton window — meant that without Malcolm X\'s pressure, the concessions MLK achieved might never have seemed sufficiently urgent to Congress.' },
-  { num: 19, type: 'sa', topic: 'Connections',
-    q: 'Identify TWO specific ways the African American civil rights movement influenced either the Latino movement, the women\'s movement, or the Native American movement. Be specific about tactics or organizational models.',
-    sampleAnswer: 'First, César Chávez explicitly modeled UFW tactics on the civil rights playbook: the 300-mile march to Sacramento echoed the Selma-to-Montgomery marches; the grape boycott mirrored the Montgomery Bus Boycott\'s consumer pressure strategy; and Chávez\'s fasting directly invoked Gandhi as MLK had done. Second, NOW (the National Organization for Women, founded 1966) was partly inspired by women activists who experienced being marginalized within male-dominated civil rights organizations like SNCC — Stokely Carmichael infamously remarked that "the position of women in SNCC is prone." The movement\'s internal sexism catalyzed feminist organizing, borrowing the civil rights model of consciousness-raising and direct action.' },
-  { num: 20, type: 'sa', topic: 'Evaluation',
-    q: 'Was the Civil Rights Act of 1968 (Fair Housing Act) a success or a failure? Make a specific argument using evidence from the period.',
-    sampleAnswer: 'The Civil Rights Act of 1968 was largely a failure in practical impact despite its symbolic significance. First, it was reactive legislation — passed within a week of MLK\'s assassination and the resulting riots — which meant Congress acted under emotional shock rather than genuine political commitment, resulting in weak enforcement mechanisms. Second, the act banned discrimination in housing transactions but did nothing to address the concentrated poverty, unemployment, and underfunded schools that produced racially segregated neighborhoods in the first place. Third, decades of subsequent data showed residential segregation remaining measurable and persistent in most American cities. A law that changes transactional rules without addressing structural economic causes cannot transform material outcomes — making the Fair Housing Act a well-intentioned but ultimately insufficient response to the problem it claimed to solve.' }
-];
-
-let examState = {};
-
-function buildExam() {
-  const c = document.getElementById('exam-container');
-  c.innerHTML = '';
-  questions.forEach((q, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-card';
-    d.id = 'qcard-' + i;
-    let html = `<div class="q-meta">
-      <span class="q-n">Q${q.num}</span>
-      <span class="q-type-badge ${q.type === 'mc' ? 'badge-mc' : 'badge-sa'}">${q.type === 'mc' ? 'Multiple Choice' : 'Short Answer'}</span>
-      <span class="badge-topic">${q.topic}</span>
-    </div>
-    <div class="q-text">${q.q}</div>`;
-    if (q.type === 'mc') {
-      html += '<div class="q-opts">';
-      q.opts.forEach((o, oi) => {
-        html += `<div class="q-opt" id="opt-${i}-${oi}" onclick="selectOpt(${i},${oi})">${o}</div>`;
-      });
-      html += '</div>';
-    } else {
-      html += `<textarea class="sa-area" placeholder="Write your answer here…" rows="4"></textarea>`;
+function calcScore() {
+  const mcQs = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'];
+  let score = 0;
+  let answered = 0;
+  mcQs.forEach(q => {
+    if (answers[q]) {
+      answered++;
+      if (answers[q] === correct[q]) score++;
     }
-    html += `<button class="reveal-btn" onclick="toggleAnswer(${i})">Show explanation ↓</button>
-    <div class="answer-reveal" id="ar-${i}">`;
-    if (q.type === 'mc') {
-      html += `<div class="ar-correct">✓ Correct answer: ${q.correctText}</div>`;
-    } else {
-      html += `<div class="ar-label">Sample answer</div>`;
-    }
-    html += `<div class="ar-text">${q.sampleAnswer || q.explanation}</div></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
   });
+  const bar = document.getElementById('score-bar');
+  bar.style.display = 'flex';
+  document.getElementById('score-display').textContent = score + '/' + answered;
+  const pct = answered > 0 ? Math.round((score / answered) * 100) : 0;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  bar.scrollIntoView({behavior: 'smooth'});
 }
-
-function selectOpt(qi, oi) {
-  if (examState[qi] !== undefined) return;
-  const q = questions[qi];
-  q.opts.forEach((_, j) => {
-    const el = document.getElementById('opt-' + qi + '-' + j);
-    el.classList.add('locked');
-    if (j === q.correct) el.classList.add('correct');
-    else if (j === oi) el.classList.add('wrong');
-  });
-  examState[qi] = oi;
-  updateScore();
-}
-
-function toggleAnswer(i) {
-  const ar = document.getElementById('ar-' + i);
-  ar.classList.toggle('open');
-  if (!(i in examState)) {
-    examState[i] = true;
-    updateScore();
-  }
-}
-
-function updateScore() {
-  const n = Object.keys(examState).length;
-  document.getElementById('qs-score').textContent = n + '/20';
-  document.getElementById('qs-bar').style.width = (n / 20 * 100) + '%';
-  document.getElementById('qs-label').textContent = n + ' of 20 questions answered';
-}
-
-function resetExam() {
-  examState = {};
-  updateScore();
-  buildExam();
-}
-
-buildExam();
 </script>
 </body>
 </html>
